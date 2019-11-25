@@ -1,0 +1,89 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<view class="page-top conniter" wx:fi="{{accredit == false}}">
+  <template is="showToast" data="{{showToast: showToast}}" />
+  <view class="zhezhao" bindtap="tap_ch" style="{{clname ? 'display:block;' : ''}} {{translate}}"></view>
+  <view class='loading-box {{loadingshow == true ? "no-loading" : ""}}'></view>
+  <!-- <view class='loading-box {{deviceload == true ? "no-loading" : ""}}'></view> -->
+  <view  style="{{translate}}" class="allother {{main == true ? 'mine' : 'mines'}}"  style="{{translate}};">
+      <view class="indexnav-out">
+      <view class='indexxy-nav'>
+        <view class='xy-menu' bindtap="tap_ch">
+          <view class='line'></view>
+          <view class='line'></view>
+          <view class='line'></view>
+        </view>
+        <view wx:if="{{main == true}}" class='message-empty' bindtap='scenarioLongTap' data-addscene='addScene'>添加场景</view>
+        <text wx:if="{{facility == true && noDevice == false}}" class='message-empty' bindtap='addDevicePage'>添加设备</text>
+        <text class='little-dot' wx:if="{{isnewDevice == true && facility == true && noDevice == false}}"></text>
+        <image  wx:if="{{mine == true}}" src='../../imgs/ic_launcher.png' class='my-logo'></image>
+      </view>
+    </view>
+    <view class='off-line' wx:if="{{onLines != false}}">
+      <image src='../../imgs/icon_warning.png' class='offimg'></image>
+      <view class='offbt'>{{onLines}}</view>
+    </view>
+    <view wx:if='{{add_homecenter}}' class='add-homecenter'>
+      <view bindtap='goInvitation' class='addHomecenter device-addHomecenter' wx:for='{{add_homecenter}}' wx:key='i' data-deviceuuid='{{item}}' wx:if="{{index == 0}}">
+        <image src='../../imgs/icon_info.png' class='preson'></image>
+        <view class='addDetail'>{{item.ByDisplayName}}请求加入家庭中心{{item.DeviceName}}</view>
+        <image src='../../imgs/icon_next.png' class='icon-next msgNext'></image>
+      </view>
+    </view>
+    <view class='prompt'>
+      <view class='hintshow'>{{deviceStates.otherDevicesText}}{{deviceStates.safetyDevicesText}}
+        <text wx:if="{{tem != ''}}">，当前温度 {{tem}} ºC</text>
+      </view>
+      <view class='cdataAll'>
+        <view class='cdataItem' animation="{{animationData1}}">{{data1}}</view>
+        <view class='cdataItem' animation="{{animationData2}}">{{data2}}</view>
+        <view class='cdataItem' animation="{{animationData3}}">{{data3}}</view>
+      </view>
+      <view class='c'>
+        <image class='b1' wx:if="{{imgdata1 != ''}}" animation="{{imganimationData1}}" src='{{imgdata1}}'></image>
+        <image class='b2' wx:if="{{imgdata2 != ''}}" animation="{{imganimationData2}}" src="{{imgdata2}}"></image>
+        <image class='b3' wx:if="{{imgdata3 != ''}}" animation="{{imganimationData3}}" src="{{imgdata3}}"></image>
+        <image class='b4' wx:if="{{imgdata4 != ''}}" animation="{{imganimationData4}}" src="{{imgdata4}}"></image>
+        <image class='b5' wx:if="{{imgdata5 != ''}}" animation="{{imganimationData5}}" src="{{imgdata5}}"></image>
+      </view>
+    </view>
+  <!-- {{system}}{{mainScenes}} -->
+    <scroll-view class='deviceView' scroll-y wx:if="{{windowWidth > 320}}">
+      <view class='gridview' wx:for="{{scenes}}" wx:key='i'>
+        <view class='scene'>
+          <canvas class='cir' canvas-id="sens{{index}}">
+          </canvas>
+          <view bindtouchend='mytouchend' data-del="{{index >= 4 ? 'true' : 'false'}}" data-uuid='{{item.scene.uuid}}' data-class='sens{{index}}' bindlongpress='scenarioLongTap' bindtap='scenetap' class='{{item.scenetaps == true ? "bgscenario":"scenario"}}  {{item.largen == true ? "scenario-larger":""}}'>
+            <view style='position:absolute;top:0;left:0;height:100%;width:100%;'>
+              <image class='xy-state' src='{{item.scenesImg}}'></image>
+              <text class='xy-bt'>{{item.scene.name}}</text>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+    </scroll-view>
+
+    <scroll-view class='deviceView view320'scroll-y wx:if="{{windowWidth <= 320}}">
+      <view class='gridview' wx:for="{{scenes}}" wx:key='i'>
+        <view class='scene sens'>
+          <canvas class="cir cirview" canvas-id="sens{{index}}">
+          </canvas>
+         <view bindtouchend='mytouchend'data-del="{{index >= 4 ? 'true' : 'false'}}" data-uuid='{{item.scene.uuid}}' data-class='sens{{index}}' bindlongpress='scenarioLongTap' bindtap='scenetap' class='{{item.scenetaps == true ? "bgscenario":"scenario sens"}}  {{item.largen == true ? "scenario-larger":""}}'>
+            <view style='position:absolute;top:0;left:0;height:100%;width:100%;'>
+              <image class='xy-state xy-littleview {{item.largen == true ? "xy-largerview":""}}' src='{{item.scenesImg}}'></image>
+              <text class='xy-bt xy-btview'>{{item.scene.name}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+  <device class="allother {{facility == true ? 'mine' : 'mines'}}" device-list="{{deviceList}}" bindsidebar="sidebar" style="{{translate}};" open="{{open}}" bind:deviceloading="deviceloading" on-lines="{{onLines}}" add-homecenter="{{add_homecenter}}"></device>
+  
+  <mine class="{{mine == true ? 'mine' : 'mines'}}" information="{{information}}" bindsidebar="sidebar" style="{{translate}};" open="{{open}}"></mine>
+
+  <common class="common" bindmyevent='selectBox' userBox='{{add_homecenter}}' inner-text="{{homecenters}}" box-status="{{boxStatus}}"></common>
+  <tabbar style="{{translate}}" class="tabBar {{systemModel == true ? 'tabbarX' : ''}}" bindmyevents='tabChange' tabar-main="{{main}}" tabar-facility="{{facility}}" tabar-mine="{{mine}}"></tabbar>
+</view>

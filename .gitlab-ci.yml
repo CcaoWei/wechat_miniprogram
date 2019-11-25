@@ -1,0 +1,7 @@
+all_tests:
+    image: rxwen/frontend-ci
+    artifacts:
+        expire_in: 1 day
+        untracked: true
+    script:
+        - make lint

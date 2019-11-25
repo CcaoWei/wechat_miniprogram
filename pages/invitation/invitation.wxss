@@ -1,0 +1,86 @@
+.invitation{
+
+  padding: 80rpx 30rpx 0 30rpx;
+  background: #fff;
+}
+.invitation-top{
+  height: 66rpx;
+  width: 100%;
+}
+.invitation-top image{
+  width: 66rpx;
+  height: 66rpx;
+  float: left;
+}
+.top-name{
+  float: left;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #00000E;
+  line-height: 66rpx;
+}
+.name-user{
+  text-decoration: underline;
+  margin: 0 17rpx;
+}
+.box-name{
+  width: 100%;
+  text-align: left;
+  margin-top: 2rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #00000E;
+  line-height: 63rpx;
+  padding-left: 30rpx;
+}
+.box-detail{
+  width: 646rpx;
+  height: 446rpx;
+  background: #FAFAFA;
+  padding-top: 53rpx;
+  border-radius: 25px;
+  margin: 0 auto;
+}
+.box-detail image{
+  width: 226rpx;
+  height: 226rpx;
+  margin: 0 auto 21rpx;
+  display: block;
+  float: none;
+}
+.text-name{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #1D1F20;
+  line-height: 42rpx;
+  width: 100%;
+  text-align: center;
+}
+.invitation-btn{
+  width: 283.5rpx;
+  height: 83.5rpx;
+  float:left;
+  font-family: PingFangSC-Regular;
+  color: #2D3B46;
+  font-size: 30rpx;
+  margin-top: 299rpx;
+  padding: 0;
+  background: #fff;
+  position: relative;
+  text-align:center;
+  line-height: 83.3rpx;
+}
+.btn-posi{
+  /* margin: 299rpx 0 0 0; */
+  float: right;
+  margin-top: 299rpx;
+  /* margin-right: 30rpx; */
+}
+.border-line{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+  left: 0
+}

@@ -1,0 +1,43 @@
+/* pages/sendCode/sendCode.wxss */
+.send-code{
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+.message-hint{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #6E869A;
+  line-height: 42rpx;
+  width: 676rpx;
+  height: 126rpx;
+  margin: 44rpx auto 135rpx;
+}
+.sendcode-btn{
+  height: 91rpx;
+  width: 416rpx;
+  border: 2rpx solid #ccc;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #2D3B46;
+  line-height: 91rpx;
+  text-align: center;
+  margin: 0 auto 17rpx;
+  border-radius: 150rpx;
+}
+.no-bind{
+  opacity: 0.49;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #2D3B46;
+  line-height: 42rpx;
+  text-align: center;
+  margin-top: 21rpx;
+  padding-top: 21rpx;
+}
+.now-bind{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #65B9FF;
+  line-height: 42rpx;
+}

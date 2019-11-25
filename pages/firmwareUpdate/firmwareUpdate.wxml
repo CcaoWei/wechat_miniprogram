@@ -1,0 +1,267 @@
+<!--pages/firmwareUpdate/firmwareUpdate.wxml-->
+<view class='overall'>
+  <!-- <view wx:if="{{boxupdata == true}}">该家庭中心正在升级</view> -->
+  <view class='updataAll'>
+    <view class='updataAll-btn' bindtap='allUpdeta'>全部升级</view>
+  </view>
+  <view class='updata-detail' wx:if="{{item.firmwaredevices.length != 0}}" wx:for='{{firmwareAll}}' wx:key="i" wx:for-index="idx">
+
+    <!-- <view class='updata-detail' wx:if="{{itemF.firmwaredevices.uuid}}" wx:for="{{item.firmwaredevices}}" wx:for-item="itemF" wx:key="o"> -->
+    <view class='updata-bt' wx:if="{{!item.uiFirmware.version}}">可升级到版本 {{item.uiFirmware.Version}}
+    
+      <view class='updata' wx:if="{{noneUpdata == false}}" bindtap='updataFirmware' data-in="{{idx}}">升级</view>
+      <view class='look-new-metergasis' bindtap='lookMetergasis' data-version='{{item.uiFirmware.Version}}' data-model='{{item.uiFirmware.ImageModel}}'>查看新功能</view>
+    </view>
+    <view class='updata-bt'   wx:if="{{item.uiFirmware.version}}">可升级到版本 {{item.uiFirmware.version}}
+      <view class='updata' wx:if="{{noneUpdata == false}}" bindtap='updataFirmware' data-in="{{idx}}">升级</view>
+      <view class='look-new-metergasis' bindtap='lookMetergasis' data-version='{{item.uiFirmware.version}}' data-model='{{item.uiFirmware.ImageModel}}'>查看新功能</view>
+    </view>
+    <!-- 门磁  -->
+    <view wx:if="{{item.uiFirmware.ImageModel == 'TERNCY-DC01'}}">
+      <view class='devicedetail {{item.firmwaredevices.length-1 == index ? "border-none": "" }}' bindtap='isSelect' data-in="{{idx}}" data-index='{{index}}' data-uuid='{{itemF.fwDevice.uuid}}' bindtap='isSelect' wx:for="{{item.firmwaredevices}}" wx:for-item="itemF"
+        wx:key="o">
+        <image class='newDevicesimg' src='../../imgs/new_device_dc.png'></image>
+        <view class='contentall'>
+          <text class='contentbt'>{{itemF.fwDevice.logicDevice[0].name || itemF.fwDevice.uiname}}</text>
+          <text wx:if="{{itemF.fwDevice.updata != false && itemF.fwDevice.updata != true}}" class='contenttext'>当前版本 {{itemF.fwDevice.version}}</text>
+          <text wx:if="{{itemF.fwDevice.updata && !itemF.stopUpdata}}" class='contenttext'>正在从版本{{itemF.fwDevice.version}}升级到版本{{item.uiFirmware.Version}}</text>
+          <text wx:if="{{itemF.fwDevice.stopUpdata}}" class='contenttext'>升级错误！</text>
+          <view class='{{itemF.fwDevice.okUpdata ? "nowVersion" : "none"}}'>当前版本{{item.uiFirmware.Version}}</view>
+        </view>
+         <view class='option'>
+          <image wx:if="{{itemF.fwDevice.select}}" src='../../imgs/scene_edit_icon_select.png' class="{{itemF.fwDevice.select ? 'selected' : 'noSelected'}}"></image>
+          <image class="{{itemF.fwDevice.updata ? 'bgimg' : 'bgimgs'}}" src='../../imgs/cirbgimg.png'></image>
+          <view class="{{itemF.fwDevice.updata ? 'top' : 'tops'}}">
+            <canvas class="cir" style="width:56rpx; height:56rpx;z-index:2;" canvas-id="canvasArc{{idx}}{{index}}">
+            </canvas>
+
+            <view class="cc">{{itemF.fwDevice.Percent}}</view>
+
+          </view>
+          <view class='{{itemF.fwDevice.stopUpdata ? "stopUpdata" : "none"}}'>已停止升级</view>
+          <view class='{{itemF.fwDevice.okUpdata ? "stopUpdata okUpdata" : "none"}}'>升级成功！</view>
+        </view>
+      </view>
+    </view>
+    <!-- 网关 -->
+    <view wx:if="{{item.uiFirmware.ImageModel == 'TERNCY-GW01'}}">
+      <view class='devicedetail {{item.firmwaredevices.length-1 == index ? "border-none": "" }}' bindtap='isSelect' data-in="{{idx}}" data-index='{{index}}' data-uuid='{{itemF.fwDevice.uuid}}' bindtap='isSelect' wx:for="{{item.firmwaredevices}}" wx:for-item="itemF"
+        wx:key="o">
+        <image class='newDevicesimg' src='../../imgs/box.png'></image>
+        <view class='contentall'>
+          <text class='contentbt'>{{itemF.name}}</text>
+          <text wx:if="{{itemF.fwDevice.updata != false && itemF.fwDevice.updata != true}}" class='contenttext'>当前版本 {{itemF.uiVersion}}</text>
+          <text wx:if="{{itemF.fwDevice.updata && !itemF.stopUpdata}}" class='contenttext'>正在从版本{{itemF.uiVersion}}升级到版本{{item.uiFirmware.version}}</text>
+          <text wx:if="{{itemF.fwDevice.stopUpdata}}" class='contenttext'>升级错误！</text>
+            <text wx:if="{{itemF.fwDevice.okUpdata}}" class='contenttext'>升级成功！</text>  
+        </view>
+        <view class='option'>
+          <image wx:if="{{itemF.fwDevice.select}}" src='../../imgs/scene_edit_icon_select.png' class="{{itemF.fwDevice.select ? 'selected' : 'noSelected'}}"></image>
+          <image class="{{itemF.fwDevice.updata ? 'bgimg' : 'bgimgs'}}" src='../../imgs/cirbgimg.png'></image>
+          <view class="{{itemF.fwDevice.updata ? 'top' : 'tops'}}">
+            <canvas class="cir" style="width:60rpx; height:60px;" canvas-id="canvasArc{{idx}}{{index}}">
+            </canvas>
+            <view class="cc">{{itemF.fwDevice.Percent}}</view>
+          </view>
+          <view class='{{itemF.fwDevice.okUpdata ? "stopUpdata okUpdata" : "none"}}'>升级成功！</view>
+        </view>
+      </view>
+    </view>
+    <!-- 灯座 -->
+    <view wx:if="{{item.uiFirmware.ImageModel == 'TERNCY-LS01'}}">
+      <view class='devicedetail {{item.firmwaredevices.length-1 == index ? "border-none": "" }}' bindtap='isSelect' data-in="{{idx}}" data-index='{{index}}' data-uuid='{{itemF.fwDevice.uuid}}' wx:for="{{item.firmwaredevices}}" wx:for-item="itemF" wx:key="o">
+        <image class='newDevicesimg' src='../../imgs/new_device_light.png'></image>
+        <view class='contentall'>
+          <text class='contentbt'>{{itemF.fwDevice.logicDevice[0].uiname}}</text>
+          <text wx:if="{{itemF.fwDevice.updata != false && itemF.fwDevice.updata != true}}" class='contenttext'>当前版本 {{itemF.fwDevice.version}}</text>
+          <text wx:if="{{itemF.fwDevice.updata && !itemF.stopUpdata}}" class='contenttext'>正在从版本{{itemF.fwDevice.version}}升级到版本{{item.uiFirmware.Version}}</text>
+          <text wx:if="{{itemF.fwDevice.stopUpdata}}" class='contenttext'>升级错误！</text>
+          <view class='{{itemF.fwDevice.okUpdata ? "nowVersion" : "none"}}'>当前版本{{item.uiFirmware.Version}}</view>
+        </view>
+        <view class='option'>
+          <image wx:if="{{itemF.fwDevice.select}}" src='../../imgs/scene_edit_icon_select.png' class="{{itemF.fwDevice.select ? 'selected' : 'noSelected'}}"></image>
+          <image class="{{itemF.fwDevice.updata ? 'bgimg' : 'bgimgs'}}" src='../../imgs/cirbgimg.png'></image>
+          <view class="{{itemF.fwDevice.updata ? 'top' : 'tops'}}">
+            <canvas class="cir" style="width:56rpx; height:56rpx;z-index:2;" canvas-id="canvasArc{{idx}}{{index}}">
+            </canvas>
+
+            <view class="cc">{{itemF.fwDevice.Percent}}</view>
+
+          </view>
+          <view class='{{itemF.fwDevice.stopUpdata ? "stopUpdata" : "none"}}'>已停止升级</view>
+          <view class='{{itemF.fwDevice.okUpdata ? "stopUpdata okUpdata" : "none"}}'>升级成功！</view>
+        </view>
+      </view>
+    </view>
+     <!-- 开关模块 -->
+    <view wx:if="{{item.uiFirmware.ImageModel == 'TERNCY-SM01-D2'}}">
+      <view class='devicedetail {{item.firmwaredevices.length-1 == index ? "border-none": "" }}' bindtap='isSelect' data-in="{{idx}}" data-index='{{index}}' data-uuid='{{itemF.fwDevice.uuid}}' wx:for="{{item.firmwaredevices}}" wx:for-item="itemF" wx:key="o">
+        <image class='newDevicesimg' src='../../imgs/new_device_switch_module.png'></image>
+        <view class='contentall'>
+          <text class='contentbt'>{{itemF.fwDevice.uiname}}</text>
+          <text wx:if="{{itemF.fwDevice.updata != false && itemF.fwDevice.updata != true}}" class='contenttext'>当前版本 {{itemF.fwDevice.version}}</text>
+          <text wx:if="{{itemF.fwDevice.updata && !itemF.stopUpdata}}" class='contenttext'>正在从版本{{itemF.fwDevice.version}}升级到版本{{item.uiFirmware.Version}}</text>
+          <text wx:if="{{itemF.fwDevice.stopUpdata}}" class='contenttext'>升级错误！</text>
+          <view class='{{itemF.fwDevice.okUpdata ? "nowVersion" : "none"}}'>当前版本{{item.uiFirmware.Version}}</view>
+        </view>
+        <view class='option'>
+          <image wx:if="{{itemF.fwDevice.select}}" src='../../imgs/scene_edit_icon_select.png' class="{{itemF.fwDevice.select ? 'selected' : 'noSelected'}}"></image>
+          <image class="{{itemF.fwDevice.updata ? 'bgimg' : 'bgimgs'}}" src='../../imgs/cirbgimg.png'></image>
+          <view class="{{itemF.fwDevice.updata ? 'top' : 'tops'}}">
+            <canvas class="cir" style="width:56rpx; height:56rpx;z-index:2;" canvas-id="canvasArc{{idx}}{{index}}">
+            </canvas>
+
+            <view class="cc">{{itemF.fwDevice.Percent}}</view>
+
+          </view>
+          <view class='{{itemF.fwDevice.stopUpdata ? "stopUpdata" : "none"}}'>已停止升级</view>
+          <view class='{{itemF.fwDevice.okUpdata ? "stopUpdata okUpdata" : "none"}}'>升级成功！</view>
+        </view>
+      </view>
+    </view>
+    <!-- 插座  -->
+    <view wx:if="{{item.uiFirmware.ImageModel == 'TERNCY-SP01'}}">
+      <view class='devicedetail {{item.firmwaredevices.length-1 == index ? "border-none": "" }}' bindtap='isSelect' data-in="{{idx}}" data-index='{{index}}' data-uuid='{{itemF.fwDevice.uuid}}' bindtap='isSelect' wx:for="{{item.firmwaredevices}}" wx:for-item="itemF"
+        wx:key="o">
+        <image class='newDevicesimg' src='../../imgs/new_device_plug.png'></image>
+        <view class='contentall'>
+          <text class='contentbt'>{{itemF.fwDevice.logicDevice[0].uiname}}</text>
+          <text wx:if="{{itemF.fwDevice.updata != false && itemF.fwDevice.updata != true}}" class='contenttext'>当前版本 {{itemF.fwDevice.version}}</text>
+          <text wx:if="{{itemF.fwDevice.updata && !itemF.fwDevice.stopUpdata}}" class='contenttext'>正在从版本{{itemF.fwDevice.version}}升级到版本{{item.uiFirmware.Version}}</text>
+          <text wx:if="{{itemF.fwDevice.stopUpdata}}" class='contenttext'>升级错误！</text>
+          <view class='{{itemF.fwDevice.okUpdata ? "nowVersion" : "none"}}'>当前版本{{item.uiFirmware.Version}}</view>
+        </view>
+         <view class='option'>
+          <image wx:if="{{itemF.fwDevice.select}}" src='../../imgs/scene_edit_icon_select.png' class="{{itemF.fwDevice.select ? 'selected' : 'noSelected'}}"></image>
+          <image class="{{itemF.fwDevice.updata ? 'bgimg' : 'bgimgs'}}" src='../../imgs/cirbgimg.png'></image>
+          <view class="{{itemF.fwDevice.updata ? 'top' : 'tops'}}">
+            <canvas class="cir" style="width:56rpx; height:56rpx;z-index:2;" canvas-id="canvasArc{{idx}}{{index}}">
+            </canvas>
+
+            <view class="cc">{{itemF.fwDevice.Percent}}</view>
+
+          </view>
+          <view class='{{itemF.fwDevice.stopUpdata ? "stopUpdata" : "none"}}'>已停止升级</view>
+          <view class='{{itemF.fwDevice.okUpdata ? "stopUpdata okUpdata" : "none"}}'>升级成功！</view>
+        </view>
+
+      </view>
+    </view>
+    <!-- 开关 -->
+    <view wx:if="{{item.uiFirmware.ImageModel == 'TERNCY-PP01'}}">
+      <view class='devicedetail {{item.firmwaredevices.length-1 == index ? "border-none": "" }}' bindtap='isSelect' data-in="{{idx}}" data-index='{{index}}' data-uuid='{{itemF.fwDevice.uuid}}' bindtap='isSelect' wx:for="{{item.firmwaredevices}}" wx:for-item="itemF"
+        wx:key="o">
+        <image class='newDevicesimg' src='../../imgs/new_device_pir.png'></image>
+        <view class='contentall'>
+          <text class='contentbt'>{{itemF.fwDevice.logicDevice[0].uiname}}</text>
+          <text wx:if="{{itemF.fwDevice.updata != false && itemF.fwDevice.updata != true}}" class='contenttext'>当前版本 {{itemF.fwDevice.version}}</text>
+          <text wx:if="{{itemF.fwDevice.updata && !itemF.fwDevice.stopUpdata}}" class='contenttext'>正在从版本{{itemF.fwDevice.version}}升级到版本{{item.uiFirmware.Version}}</text>
+          <text wx:if="{{itemF.fwDevice.stopUpdata}}" class='contenttext'>升级错误！</text>
+          <view class='{{itemF.fwDevice.okUpdata ? "nowVersion" : "none"}}'>当前版本{{item.uiFirmware.Version}}</view>
+        </view>
+         <view class='option'>
+          <image wx:if="{{itemF.fwDevice.select}}" src='../../imgs/scene_edit_icon_select.png' class="{{itemF.fwDevice.select ? 'selected' : 'noSelected'}}"></image>
+          <image class="{{itemF.fwDevice.updata ? 'bgimg' : 'bgimgs'}}" src='../../imgs/cirbgimg.png'></image>
+          <view class="{{itemF.fwDevice.updata ? 'top' : 'tops'}}">
+            <canvas class="cir" style="width:56rpx; height:56rpx;z-index:2;" canvas-id="canvasArc{{idx}}{{index}}">
+            </canvas>
+
+            <view class="cc">{{itemF.fwDevice.Percent}}</view>
+
+          </view>
+          <view class='{{itemF.fwDevice.stopUpdata ? "stopUpdata" : "none"}}'>已停止升级</view>
+          <view class='{{itemF.fwDevice.okUpdata ? "stopUpdata okUpdata" : "none"}}'>升级成功！</view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+    <!-- 窗帘 -->
+    <view wx:if="{{item.uiFirmware.ImageModel == 'TERNCY-CM01'}}">
+      <view class='devicedetail {{item.firmwaredevices.length-1 == index ? "border-none": "" }}' bindtap='isSelect' data-in="{{idx}}" data-index='{{index}}' data-uuid='{{itemF.fwDevice.uuid}}' bindtap='isSelect' wx:for="{{item.firmwaredevices}}" wx:for-item="itemF"
+        wx:key="o">
+        <image class='newDevicesimg' src='../../imgs/new_device_curtain.png'></image>
+        <view class='contentall'>
+          <text class='contentbt'>{{itemF.fwDevice.logicDevice[0].uiname}}</text>
+          <text wx:if="{{itemF.fwDevice.updata != false && itemF.fwDevice.updata != true}}" class='contenttext'>当前版本 {{itemF.fwDevice.version}}</text>
+          <text wx:if="{{itemF.fwDevice.updata && !itemF.fwDevice.stopUpdata}}" class='contenttext'>正在从版本{{itemF.fwDevice.version}}升级到版本{{item.uiFirmware.Version}}</text>
+          <text wx:if="{{itemF.fwDevice.stopUpdata}}" class='contenttext'>升级错误！</text>
+          <view class='{{itemF.fwDevice.okUpdata ? "nowVersion" : "none"}}'>当前版本{{item.uiFirmware.Version}}</view>
+        </view>
+         <view class='option'>
+          <image wx:if="{{itemF.fwDevice.select}}" src='../../imgs/scene_edit_icon_select.png' class="{{itemF.fwDevice.select ? 'selected' : 'noSelected'}}"></image>
+          <image class="{{itemF.fwDevice.updata ? 'bgimg' : 'bgimgs'}}" src='../../imgs/cirbgimg.png'></image>
+          <view class="{{itemF.fwDevice.updata ? 'top' : 'tops'}}">
+            <canvas class="cir" style="width:56rpx; height:56rpx;z-index:2;" canvas-id="canvasArc{{idx}}{{index}}">
+            </canvas>
+
+            <view class="cc">{{itemF.fwDevice.Percent}}</view>
+
+          </view>
+          <view class='{{itemF.fwDevice.stopUpdata ? "stopUpdata" : "none"}}'>已停止升级</view>
+          <view class='{{itemF.fwDevice.okUpdata ? "stopUpdata okUpdata" : "none"}}'>升级成功！</view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+    <!-- 墙壁开关 -->
+    <view wx:elif='{{item.uiFirmware.types == "ws"}}'>
+      <view class='devicedetail {{item.firmwaredevices.length-1 == index ? "border-none": "" }}' bindtap='isSelect' data-in="{{idx}}" data-index='{{index}}' data-uuid='{{itemF.fwDevice.uuid}}' bindtap='isSelect' wx:for="{{item.firmwaredevices}}" wx:for-item="itemF"
+        wx:key="o">
+        <image class='newDevicesimg' src='../../imgs/new_device_wallswitch.png'></image>
+        <view class='contentall'>
+          <text class='contentbt'>{{itemF.fwDevice.uiname}}</text>
+          <text wx:if="{{itemF.fwDevice.updata != false && itemF.fwDevice.updata != true}}" class='contenttext'>当前版本 {{itemF.fwDevice.version}}</text>
+          <text wx:if="{{itemF.fwDevice.updata && !itemF.fwDevice.stopUpdata}}" class='contenttext'>正在从版本{{itemF.fwDevice.version}}升级到版本{{item.uiFirmware.Version}}</text>
+          <text wx:if="{{itemF.fwDevice.stopUpdata}}" class='contenttext'>升级错误！</text>
+          <view class='{{itemF.fwDevice.okUpdata ? "nowVersion" : "none"}}'>当前版本{{item.uiFirmware.Version}}</view>
+        </view>
+         <view class='option'>
+          <image wx:if="{{itemF.fwDevice.select}}" src='../../imgs/scene_edit_icon_select.png' class="{{itemF.fwDevice.select ? 'selected' : 'noSelected'}}"></image>
+          <image class="{{itemF.fwDevice.updata ? 'bgimg' : 'bgimgs'}}" src='../../imgs/cirbgimg.png'></image>
+          <view class="{{itemF.fwDevice.updata ? 'top' : 'tops'}}">
+            <canvas class="cir" style="width:56rpx; height:56rpx;z-index:2;" canvas-id="canvasArc{{idx}}{{index}}">
+            </canvas>
+
+            <view class="cc">{{itemF.fwDevice.Percent}}</view>
+
+          </view>
+          <view class='{{itemF.fwDevice.stopUpdata ? "stopUpdata" : "none"}}'>已停止升级</view>
+          <view class='{{itemF.fwDevice.okUpdata ? "stopUpdata okUpdata" : "none"}}'>升级成功！</view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+     <!-- 空调网关 -->
+     <view wx:if="{{item.uiFirmware.ImageModel == 'TERNCY-VG01'}}">
+      <view class='devicedetail {{item.firmwaredevices.length-1 == index ? "border-none": "" }}' bindtap='isSelect' data-in="{{idx}}" data-index='{{index}}' data-uuid='{{itemF.fwDevice.uuid}}' bindtap='isSelect' wx:for="{{item.firmwaredevices}}" wx:for-item="itemF"
+        wx:key="o">
+        <image class='newDevicesimg' src='../../imgs/new_device_air_conditioner.png'></image>
+        <view class='contentall'>
+          <text class='contentbt'>{{itemF.fwDevice.name || itemF.fwDevice.uiname}}</text>
+          <text wx:if="{{itemF.fwDevice.updata != false && itemF.fwDevice.updata != true}}" class='contenttext'>当前版本 {{itemF.fwDevice.version}}</text>
+          <text wx:if="{{itemF.fwDevice.updata && !itemF.fwDevice.stopUpdata}}" class='contenttext'>正在从版本{{itemF.fwDevice.version}}升级到版本{{item.uiFirmware.Version}}</text>
+          <text wx:if="{{itemF.fwDevice.stopUpdata}}" class='contenttext'>升级错误！</text>
+          <view class='{{itemF.fwDevice.okUpdata ? "nowVersion" : "none"}}'>当前版本{{item.uiFirmware.Version}}</view>
+        </view>
+         <view class='option'>
+          <image wx:if="{{itemF.fwDevice.select}}" src='../../imgs/scene_edit_icon_select.png' class="{{itemF.fwDevice.select ? 'selected' : 'noSelected'}}"></image>
+          <image class="{{itemF.fwDevice.updata ? 'bgimg' : 'bgimgs'}}" src='../../imgs/cirbgimg.png'></image>
+          <view class="{{itemF.fwDevice.updata ? 'top' : 'tops'}}">
+            <canvas class="cir" style="width:56rpx; height:56rpx;z-index:2;" canvas-id="canvasArc{{idx}}{{index}}">
+            </canvas>
+
+            <view class="cc">{{itemF.fwDevice.Percent}}</view>
+
+          </view>
+          <view class='{{itemF.fwDevice.stopUpdata ? "stopUpdata" : "none"}}'>已停止升级</view>
+          <view class='{{itemF.fwDevice.okUpdata ? "stopUpdata okUpdata" : "none"}}'>升级成功！</view>
+        </view>
+      </view>
+      <view>
+      </view>
+    </view>
+  </view>
+</view>

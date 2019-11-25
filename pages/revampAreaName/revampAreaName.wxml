@@ -1,0 +1,29 @@
+
+<view class='conniter'>
+<view class='saveBtn'>
+  <view class='saveBtn save-box'>
+    <view class='save-bind' bindtap='save'>
+      <image src='../../imgs/save.png' class='save'></image>
+    </view>
+    
+  </view>
+</view>
+
+<view class='chooseRoom'>选择房间</view>
+<view class='roomAll' >
+  <view class="room-device" wx:for='{{areaChoose}}' data-areauuid='{{item.uuid}}' wx:for-index="key" wx:key='i' bindtap="choseTxt"  data-id="{{key}}">
+    <view class='roomItem'>
+    <view class='areaname roomDevice-name'>{{item.name}}</view>
+    <image class='unselected-binding {{item.uuid != areauuid ? "imgBlock" : ""}}'src='../../imgs/scene_edit_icon_unselected.png'></image>
+    <image class='selectBtn {{item.uuid == areauuid ? "imgBlock" : ""}}'src='../../imgs/home_center_icon_online.png'></image>
+    </view>
+  </view>
+   <view class="room-device" bindtap="addRoom" >
+    <view class='roomItem'>
+    <view class='areaname roomDevice-name add-room'>添加</view>
+    <image class='add-room-icon' src='../../imgs/add_room.png'></image>
+    </view>
+  </view>
+</view>
+</view>
+

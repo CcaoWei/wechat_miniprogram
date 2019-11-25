@@ -1,0 +1,65 @@
+/* pages/forgetPwd/forgetPwd.wxss */
+.close-code{
+  height: 35rpx;
+  width: 35rpx;
+  position: absolute;
+  bottom: 50rpx;
+  right: 0;
+  display: block;
+  z-index: 3;
+}
+.input-box{
+  height: 120rpx;
+  width: 93%;
+  border-bottom: 2rpx solid #ccc;
+  margin: 0 auto
+}
+.input-code,.input-pwd{
+  width: 65%;
+  height: 100%;
+  float: left;
+}
+.placeholder-class{
+  opacity: 0.5;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #2D3B46;
+}
+.submit-btn{
+  height: 91rpx;
+  width: 416rpx;
+  border:  2rpx solid #ccc;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #2D3B46;
+  line-height: 91rpx;
+  text-align: center;
+  margin: 152rpx auto 17rpx;
+  border-radius: 150rpx;
+}
+.code-all{
+  float: right;
+}
+.codebtn{
+  width: 200rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  text-align: center;
+  color: #dbd9d9;
+  line-height: 120rpx;
+}
+.codebtn-color{
+  color: #65B9FF;
+}
+.close-icon{
+  height: 32rpx;
+  width: 32rpx;
+  float: right;
+  margin-top: 44rpx;
+}
+.eye-icon{
+  height:25rpx;
+  width: 36rpx;
+  float: right;
+  margin: 50rpx 0 0 49rpx;
+}

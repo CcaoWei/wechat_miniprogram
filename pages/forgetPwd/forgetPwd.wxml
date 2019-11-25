@@ -1,0 +1,17 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<view>
+<template is="showToast" data="{{showToast: showToast}}" />
+  <view class='input-box'>
+  
+    <input class='input-code' type='text' bindinput='codeBox' placeholder='请输入验证码' placeholder-class='placeholder-class'  value='{{codeVal}}'></input>
+    <view class='code-all' bindtap='{{codeok == true ? "ercode" : ""}}'>
+      <view class='codebtn {{codeok == true ? "codebtn-color" : ""}}'>{{ercode}}</view>
+    </view>
+  </view>
+  <view class='input-box'>
+    <input class='input-pwd' placeholder-class='placeholder-class' type='text' bindinput='pwdBox' password="{{newhide}}" placeholder='请输入重置密码' value='{{newVal}}'></input>
+    <image src='{{newhide == true ? "../../imgs/psw_icon.png" : "../../imgs/text_icon.png"}}' bindtap='showPwd' class='eye-icon' data-isshow='{{!newhide}}'></image>
+     <image src='../../imgs/phoneclose.png' bindtap='clearVal' class='close-icon'></image>
+  </view>
+  <view class='submit-btn' bindtap='submitBtn'>确定</view>
+</view>

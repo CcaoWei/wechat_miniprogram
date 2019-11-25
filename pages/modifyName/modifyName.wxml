@@ -1,0 +1,43 @@
+<view class='modifyName conniter'>
+  <view class='confirm' wx:if="{{profile != 5}}">
+    <!-- <view class='confirm save-box'>
+      <image  bindtap='affirm' src='../../imgs/save.png'></image>
+    </view> -->
+
+    <view class='saveBtn'>
+      <view class='save-box'  bindtap='affirm'>
+        <image src='../../imgs/save.png' class='save'></image>
+      </view>
+    </view>
+    
+  </view>
+  
+<view class='compileName'>
+  <view class='compileName newName-box {{profile == 5 ? "top0" :""}}'>
+    <input type='text' class='newName' style='color:#c0c4c7' bindinput="bindKeyInput" placeholder='{{customName}}' value='{{customName}}'></input>
+    <image src='../../imgs/scene_rename.png' class='sceneNameicon'></image>
+  </view>
+</view>
+
+
+  <scroll-view class='chooseRoom'>
+    <text class='roomName'>选择房间</text>
+    <view class='roomAll'>
+
+      <view class="room-device"  wx:for='{{areaChoose}}' data-areauuid='{{item.uuid}}' wx:for-index="key" wx:key='i' bindtap="choseTxt" data-id="{{key}}" >
+        <view class='roomItem'>
+        <view class="areaname  roomDevice-name">{{item.name}}</view>
+          <image class='unselected-binding {{areauuid != item.uuid ? "imgBlock" : ""}}'src='../../imgs/scene_edit_icon_unselected.png'></image>
+          <image class='selectBtn {{areauuid == item.uuid ? "imgBlock" : ""}}' src='../../imgs/home_center_icon_online.png'></image>
+        </view>
+      </view>
+      <view class="room-device" bindtap="addRoom" >
+        <view class='roomItem'>
+        <view class="areaname  roomDevice-name add-room">添加</view>
+          <image class='unselected-binding add-room-icon' src='../../imgs/add_room.png'></image>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view  wx:if="{{profile == 5}}" class='next-btn' bindtap='affirm'>下一步</view>
+</view>

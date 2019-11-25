@@ -1,0 +1,228 @@
+<!--pages/detailOther/detailOther.wxml-->
+<view class='moreIn'>
+  <view class='moreBt'>序列号</view>
+  <view class='moreText'>{{otherIn.device.uuid || otherIn.uuid }}</view>
+</view>
+<view class='moreIn'>
+  <view class='moreBt'>版本号</view>
+  <view class='moreText'>{{version}}</view>
+</view>
+<view class='moreIn'>
+  <view class='moreBt'>型号</view>
+  <view class='moreText'>{{otherIn.device.model}}</view>
+</view>
+<view class='moreIn'>
+  <view class='moreBt'>Rssi</view>
+  <view class='moreText'>{{otherIn.rssi}}</view>
+</view>
+<view class='settings' wx:if="{{LEDInformations}}">{{LEDInformations.ledBT}}</view>
+<view class='room-device' wx:if="{{LEDInformations}}">
+  <view class='detailUrl'>
+    <image class='room-pic' src="{{LEDInformations.deviceimg}}"></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{LEDInformations.deviceName}}</view>
+      <view class='ledtext'>{{LEDInformations.ledText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{LEDInformations.switchEnable ? " " : "switch-btnbg"}}'>
+    <view class='btn-dot' wx:if="{{LEDInformations.switchEnable == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{LEDInformations.load == true}}">
+
+        <view class='linebg {{LEDInformations.switchEnable ? "linebg2" : ""}}' wx:if="{{LEDInformations.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{LEDInformations.switchEnable == false}}"></text>
+    <text class='btn-text' wx:if="{{LEDInformations.switchEnable == true}}"></text>
+    <view class='btn-dot' wx:if="{{LEDInformations.switchEnable == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{LEDInformations.load == true}}">
+
+        <view class='linebg {{LEDInformations.switchEnable ? "linebg2" : ""}}' wx:if="{{LEDInformations.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{LEDInformations.uuid}}' data-enable="{{!LEDInformations.switchEnable}}" data-type="LEDChange"></view>
+  </view>
+
+</view>
+<view class='settings' wx:if="{{lightArrs.length > 0}}">灯光按键切换可编程按键</view>
+<view class='room-device' wx:if="{{lightArrs.length > 0}}" wx:for="{{lightArrs}}" wx:key="i">
+  <view class='detailUrl'>
+    <image class='room-pic' src='{{item.deviceimg}}'></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{item.placeBt}}</view>
+      <view class='ledtext'>{{item.placeText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{item.switchEnable ? " " : "switch-btnbg"}}'>
+    <!-- <view class='switch-dotleft {{item.switchEnable == true ? "switch-dotright" : ""}}'>
+      <!-- 这个里面是点点 
+      <view class='allline' wx:if="{{item.load == true}}">
+
+        <view class='linebg {{item.switchEnable ? "linebg2" : ""}}' wx:if="{{item.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+
+    </view> -->
+     <view class='btn-dot' wx:if="{{item.switchEnable == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{item.load == true}}">
+
+        <view class='linebg {{item.switchEnable ? "linebg2" : ""}}' wx:if="{{item.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{item.switchEnable == false}}"></text>
+    <text class='btn-text' wx:if="{{item.switchEnable == true}}"></text>
+    <view class='btn-dot' wx:if="{{item.switchEnable == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{item.load == true}}">
+
+        <view class='linebg {{item.switchEnable ? "linebg2" : ""}}' wx:if="{{item.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{item.device.uuid}}' data-enable="{{!item.switchEnable}}" data-type="lightChange"></view>
+  </view>
+
+</view>
+<view class='settings' wx:if="{{keepOnOffStatus}}">自动恢复开关设置</view>
+<view class='room-device' wx:if="{{keepOnOffStatus}}">
+  <view class='detailUrl'>
+    <image class='room-pic' src="{{keepOnOffStatus.deviceimg}}"></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{keepOnOffStatus.statusBt}}</view>
+      <view class='ledtext'>{{keepOnOffStatus.statusText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{keepOnOffStatus.switchEnable ? " " : "switch-btnbg"}}'>
+    <view class='btn-dot' wx:if="{{keepOnOffStatus.switchEnable == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{keepOnOffStatus.load == true}}">
+
+        <view class='linebg {{keepOnOffStatus.switchEnable ? "linebg2" : ""}}' wx:if="{{keepOnOffStatus.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{keepOnOffStatus.switchEnable == false}}"></text>
+    <text class='btn-text' wx:if="{{keepOnOffStatus.switchEnable == true}}"></text>
+    <view class='btn-dot' wx:if="{{keepOnOffStatus.switchEnable == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{keepOnOffStatus.load == true}}">
+
+        <view class='linebg {{keepOnOffStatus.switchEnable ? "linebg2" : ""}}' wx:if="{{keepOnOffStatus.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{keepOnOffStatus.uuid}}' data-enable="{{!keepOnOffStatus.switchEnable}}" data-type="keepOnOffStatus"></view>
+  </view>
+
+</view>
+
+<view class='settings' wx:if="{{exclusiveOn}}">开关多路互锁设置</view>
+<view class='room-device' wx:if="{{exclusiveOn}}">
+  <view class='detailUrl'>
+    <image class='room-pic' src="{{exclusiveOn.deviceimg}}"></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{exclusiveOn.statusBt}}</view>
+      <view class='ledtext'>{{exclusiveOn.statusText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{exclusiveOn.enable ? " " : "switch-btnbg"}}'>
+    <view class='btn-dot' wx:if="{{exclusiveOn.enable == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{exclusiveOn.load == true}}">
+
+        <view class='linebg {{exclusiveOn.enable ? "linebg2" : ""}}' wx:if="{{exclusiveOn.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{exclusiveOn.enable == false}}"></text>
+    <text class='btn-text' wx:if="{{exclusiveOn.enable == true}}"></text>
+    <view class='btn-dot' wx:if="{{exclusiveOn.enable == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{exclusiveOn.load == true}}">
+
+        <view class='linebg {{exclusiveOn.enable ? "linebg2" : ""}}' wx:if="{{exclusiveOn.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{exclusiveOn.uuid}}' data-enable="{{!exclusiveOn.enable}}" data-type="exclusiveOn"></view>
+  </view>
+
+</view>
+

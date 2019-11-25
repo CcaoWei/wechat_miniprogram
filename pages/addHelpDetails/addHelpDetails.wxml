@@ -1,0 +1,6 @@
+<view class="addHelp-details">
+  <view class='details-imgbox  {{pir == true ? "pirWidth" : ""}}'>
+    <image class='details-img' src="{{detailsHelpImg}}"></image>
+  </view>
+  <text class='details-text'>请长按键6秒至绿色指示灯闪烁</text>
+</view>

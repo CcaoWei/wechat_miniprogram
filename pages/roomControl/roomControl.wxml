@@ -1,0 +1,13 @@
+<view class="conniter">
+  <!-- <navigator url='../roomEditer/roomEditer?{{item.room.uuid}}'> -->
+    <view class='room-device' wx:for="{{roomArrs}}" wx:key="i" bindtap='roomEditer' data-uuid='{{item.room.uuid}}'>
+      <view class='roomDevice-name'>{{item.room.name}}</view>
+      <image wx:if="{{item.room.uuid != 'area-0000'}}" class='icon-next nextpage' src='../../imgs/icon_nexts.png'></image>
+    </view>
+    <view class='room-device' bindtap='addRoom'>
+      <view class='roomDevice-name add-room'>新建</view>
+      <image class='icon-next nextpage add-room-icon' src='../../imgs/add_room.png'></image>
+    </view>
+  <!-- </navigator> -->
+  
+</view>

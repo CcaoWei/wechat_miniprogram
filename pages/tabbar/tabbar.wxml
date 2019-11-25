@@ -1,0 +1,16 @@
+<!--pages/tabBar/tabBar.wxml-->
+<view class='tab-bar'>
+  <view wx:if="{{tabarMain != 'null'}}" class='tab-item' bindtap='tabBar' data-type="scene">
+    <image src='{{tabarMain == "true" ? "../../imgs/tab_scene_selected.png" : "../../imgs/tab_scene_unselected.png"}}' class='tab-icon'></image>
+    <view class='tab-text {{tabarMain == "true" ? "tab-select" : ""}}'>场景</view>
+  </view>
+   <view class='tab-item' bindtap='tabBar' data-type="facility">
+    <image src='{{tabarFacility == "true" ? "../../imgs/tab_facility_selected.png" : "../../imgs/tab_facility_unselected.png"}}' class='tab-icon'></image>
+    <view class='tab-text  {{tabarFacility== "true" ? "tab-select" : ""}}'>设备</view>
+  </view>
+  <view class='tab-item' bindtap='tabBar' data-type="mine">
+    <image src='{{tabarMine == "true" ? "../../imgs/tab_mine_selected.png" : "../../imgs/tab_mine_unselected.png"}}' class='tab-icon'></image>
+    <view class='tab-text  {{tabarMine== "true" ? "tab-select" :  ""}}'>我的</view>
+  </view> 
+</view>
+<slot></slot>

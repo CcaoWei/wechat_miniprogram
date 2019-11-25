@@ -1,0 +1,23 @@
+/* pages/amend/amend.wxss */
+.amend{
+  height: 100rpx;
+  border-bottom: 2rpx solid #cfd1d3;
+  width: 90%;
+  line-height: 120rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  padding-left: 10rpx;
+  display: block;
+}
+.save-edit{
+  width: 100%;
+  height: 92rpx;
+  position: relative;
+}
+.edit{
+  height: 41rpx;
+  width: 42rpx;
+  position: absolute;
+  right: 28rpx;
+  top: 38rpx;
+}

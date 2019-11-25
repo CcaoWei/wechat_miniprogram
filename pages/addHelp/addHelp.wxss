@@ -1,0 +1,42 @@
+/* pages/addHelp/addHelp.wxss */
+.addHelp-page{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.choose-text{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #D4D4D4;
+  margin: 73rpx 0 30rpx 30rpx;
+  display: block;
+}
+.device-item{
+  width: 91.5%;
+  margin: 0 auto 10rpx;
+  height: 160rpx;
+  background: #FAFAFA;
+}
+.device-img{
+  width:160rpx;
+  height:160rpx;
+  display:block;
+  float:left;
+  margin-left: 13rpx;
+
+}
+.device-name{
+  opacity: 0.73;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #2D3B46;
+  line-height: 160rpx;
+  float: left;
+  margin-left: 44rpx;
+}
+.icon-next{
+  float:right;
+  height: 21rpx;
+  width: 13.6rpx;
+  margin: 71rpx 30rpx 0 0;
+}

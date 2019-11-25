@@ -1,0 +1,11 @@
+.roomDevice-name{
+  margin-left: 30rpx;
+}
+.add-room{
+  color: #ffb34d
+}
+.add-room-icon{
+  height: 40rpx;
+  width: 40rpx;
+  margin: 60rpx 30rpx 0 0;
+}

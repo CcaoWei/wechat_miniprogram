@@ -1,0 +1,62 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<view class='conniter'>
+  <template is="showToast" data="{{showToast: showToast}}" />
+  <view class='savebtn'>
+    <image bindtap='saveScene' class='saves' src='../../imgs/save.png'></image>
+  </view>
+  <view class='compileName'>
+    <input class='sceneName' placeholder='请设置场景名称' placeholder-style='color:#d6d6d6;font-size:15px' value='{{sceneName}}' bindinput='bindSceneNameChanged'></input>
+    <image src='../../imgs/scene_rename.png' class='sceneNameicon'></image>
+
+
+  </view>
+  <scroll-view class='xy-room xy-roomSencen' scroll-y wx:if="{{editDevices}}">
+    <view class='padt'>
+      <view wx:for='{{editDevices}}' wx:for-item='UIArea' wx:key='i' wx:if="{{UIArea.UILogicDevices.length > 0}}">
+        <view class='room-name'>
+          <text>{{UIArea.area.name}}</text>
+
+          <view class='check-all'>
+            <view bindtap='checkedAlls' class='checked-all {{UIArea.isSelectAllText == true ? "disnone" : ""}}' data-id='{{UIArea.area.uuid}}'>选择全开</view>
+            <view bindtap='unCheckedAll' data-id='{{UIArea.area.uuid}}' class='unchecked-all {{UIArea.isSelectAllText == true ? "disnone" : ""}}'>选择全关</view>
+          </view>
+          <view class='select-all {{UIArea.isSelectAllText == false ? "disnone" : ""}}' data-id="{{UIArea.area.uuid}}" bindlongpress='bindCheckAll' bindtap='bindSelectAll'>{{UIArea.area.selectStatus}}</view>
+        </view>
+
+        <view wx:for="{{UIArea.UILogicDevices}}" wx:for-item="UILogicDevice" wx:key='i'>
+          <view class='editItem2'>
+            <view class='editItem' bindtap='bindSelectClick' data-index='{{index}}' data-uuid='{{UILogicDevice.logicDevice.uuid}}' data-areauuid='{{UIArea.area.uuid}}'>
+              <view class='checkContainer'>
+                <image src="{{UILogicDevice.selectImg}}" class="{{UILogicDevice.checkMode}}"></image>
+              </view>
+              <image src="{{UILogicDevice.img}}" class='deviceIcon'></image>
+              <text class='deviceName'>{{UILogicDevice.logicDevice.uiname}}</text>
+            </view>
+            <view class='switch-btn-new switch-btn {{UILogicDevice.checked ? " " : "switch-btnbg"}}' wx:if='{{UILogicDevice.logicDevice.profile == 1 || UILogicDevice.logicDevice.profile == 2 || UILogicDevice.logicDevice.profile == 5}}'>
+              <!-- <view class='switch-dotleft {{UILogicDevice.checked ? "switch-dotright" : ""}}'>
+                </view> -->
+              <view class='btn-dot' wx:if="{{UILogicDevice.checked == false}}"></view>
+              <text class='btn-text' wx:if="{{UILogicDevice.checked != true}}"></text>
+              <text class='btn-text' wx:if="{{UILogicDevice.checked == true}}"></text>
+              <view class='btn-dot' wx:if="{{UILogicDevice.checked == true}}"></view>
+              <view class='bind-view' data-uuid='{{UILogicDevice.logicDevice.uuid}}' bindtap='switchtap' data-areauuid='{{UIArea.area.uuid}}'></view>
+            </view>
+            <!-- 门磁和pir的 -->
+            <view class='switch-btn-new {{UILogicDevice.checked ? " " : "switch-btnbg"}}' wx:if='{{UILogicDevice.logicDevice.profile == 0 || UILogicDevice.logicDevice.profile == 3}}'>
+              <view class='btn-dot' wx:if="{{UILogicDevice.checked == false}}"></view>
+              <text class='btn-text' wx:if="{{UILogicDevice.checked != true}}">撤防</text>
+              <text class='btn-text' wx:if="{{UILogicDevice.checked == true}}">布防</text>
+              <view class='btn-dot' wx:if="{{UILogicDevice.checked == true}}"></view>
+              <view class='bind-view' data-uuid='{{UILogicDevice.logicDevice.uuid}}' bindtap='switchtap' data-areauuid='{{UIArea.area.uuid}}'></view>
+            </view>
+          </view>
+
+
+
+
+        </view>
+      </view>
+    </view>
+    <view class='deleteScene' bindtap='deleteScene' wx:if="{{deleteScene == 'true'}}">删除场景</view>
+  </scroll-view>
+</view>

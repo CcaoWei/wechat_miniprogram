@@ -1,0 +1,11 @@
+<import src="../../utils/showToast/showToast.wxml" />  
+<view class='conniter conniters'>
+<template is="showToast" data="{{showToast: showToast}}" /> 
+  <view class='step'>操作步骤</view>
+  
+  <view class='stepone'><text class='fl num'>1. </text><text class='fl'>请确保家庭中心已经接通电源线和网线且指示灯状态为绿色；</text></view>
+  <view  class='stepone'><text class='fl num'>2. </text><text class='fl'  bindtap='erCode'>请扫描家庭中心底部的二维码，<text class='steptwo'>开始扫描二维码...</text></text></view>  
+  <image src='../../imgs/box_de.png' class='box-de'></image>
+</view>
+
+

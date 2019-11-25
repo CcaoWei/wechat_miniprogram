@@ -1,0 +1,30 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<view class="connect">
+  <template is="showToast" data="{{showToast: showToast}}" />
+  <view class='input-box'>
+    <input type='text' wx:if="{{oldhide == true}}" password class='old-pwd' bindinput='oldPwd' placeholder-class="placeholder-class" placeholder='请输入旧密码' value="{{oldVal}}"></input>
+    <input type='text' wx:if="{{oldhide == false}}"  class='old-pwd' bindinput='oldPwd' placeholder-class="placeholder-class" placeholder='请输入旧密码' value="{{oldVal || oldValue}}"></input>
+    <view class='eye-box' data-oldhide='true' data-isshow='{{!oldhide}}' bindtap='showPwd'>
+      <image src='{{oldhide == true ? "../../imgs/psw_icon.png" : "../../imgs/text_icon.png"}}'  class='eye-icon'></image>
+    </view>
+    <view class='close-box' data-oldhide='true' bindtap='clearVal'>
+      <image src='../../imgs/phoneclose.png' class='close-icon'></image>
+    </view>
+    
+  </view>
+  <view class='input-box'>
+    <input type='text' wx:if="{{newhide}}" password class='old-pwd' bindinput='newPwd' placeholder='请输入新密码' placeholder-class="placeholder-class" value='{{newVal || newValue}}'></input>
+     <input type='text' wx:if="{{newhide == false}}" class='old-pwd' bindinput='newPwd' placeholder='请输入新密码' placeholder-class="placeholder-class" value='{{newVal || newValue}}'></input>
+    <view class='eye-box' bindtap='showPwd' data-newhide='true' data-isshow='{{!newhide}}'>
+      <image src='{{newhide == true ? "../../imgs/psw_icon.png" : "../../imgs/text_icon.png"}}' class='eye-icon'></image>
+    </view>
+    <view class='close-box' data-newhide='true' bindtap='clearVal'>
+       <image src='../../imgs/phoneclose.png' class='close-icon'  ></image>
+    </view>
+    
+     
+  </view>  
+    
+    <view class='forget-pwd' bindtap='forgetPwd'>忘记密码？</view>
+    <view bindtap='submitBtn' class='submit-btn'>确定</view>
+</view>

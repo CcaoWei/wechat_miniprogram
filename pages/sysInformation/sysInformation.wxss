@@ -1,0 +1,112 @@
+.box-detail{
+  height: 560rpx;
+  background: #9ca8b6;
+}
+.icon-back{
+  height: 25rpx;
+  width: 15.2rpx;
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 35rpx;
+}
+.homename{
+  color: #fff;
+  margin-left: 120rpx;
+}
+.home_center{
+  height: 315rpx;
+  width: 308rpx;
+  margin: 0 auto;
+  display: block;
+}
+.xy-text{
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: 40rpx;
+}
+.xy-devicename{
+  width: 90%;
+  margin: 0 auto;
+  height: 120rpx;
+  border-bottom: 2rpx solid #cccccc;
+  line-height: 120rpx;
+  display: block;
+  font-family:PingFangSC-Regular;
+  font-size: 30rpx;
+  color:#2D3B46;
+
+}
+.dn-name{
+ color: #969da2;
+ float: left;
+ font-family: PingFangSC-Regular;
+font-size: 30rpx;
+}
+.dn-rel{
+  color: #656f77;
+  float: right;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+}
+.icon-next{
+  float: right;
+  margin: 40rpx 0 0;
+}
+.xy-delete{
+  width: 400rpx;
+  height: 88rpx;
+  background: #ff8443;
+  border-radius: 40rpx;
+  color: #fff;
+  margin-top: 25rpx;
+}
+.roster-boxname{
+  height: 70rpx;
+  width: 100%;
+  border-bottom: 2rpx solid silver;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  padding-left: 30rpx;
+  color: #ccc;
+  margin: 0 auto;
+}
+.roster-item{
+  width: 100%;
+  height: 120rpx;
+  border-bottom: 2rpx solid silver;
+  margin: 0 auto;
+  padding-right: 30rpx;
+}
+.roster-touxiang{
+  height: 70rpx;
+  width: 70rpx;
+  border-radius: 100%;
+  display: block;
+  float: left;
+  margin: 30rpx;
+}
+.roster-name{
+  line-height: 120rpx;
+  font-size: 30rpx;
+  float: left;
+  color: #656f77;
+  padding-left: 30rpx;
+}
+.roster-states{
+  line-height: 130rpx;
+  font-size: 26rpx;
+  float: right;
+  color: #656f77;
+  padding-left: 30rpx;
+}
+.radiobtn{
+  display:block;
+  float: right;
+}
+.rosterNext{
+  margin-right: 30rpx;
+  margin-top: 54rpx;
+}

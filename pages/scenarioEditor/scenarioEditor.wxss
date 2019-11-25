@@ -1,0 +1,174 @@
+/* pages/scenarioEditor/scenarioEditor.wxss */
+.compileName{
+  position: fixed;
+  top: 122rpx;
+  height: 120rpx;
+  width: 93.2%;
+  border-bottom: 2rpx solid #ccc;
+  z-index: 2;
+  left: 50%;
+  margin-left: -47.5%;
+  background: #fff;
+}
+.saves{
+  height: 41rpx;
+  width: 42rpx;
+  float: right;
+  margin: 40.4rpx 30rpx 0 0;
+}
+
+.savebtn{
+  width: 100%;
+  height: 122rpx;
+  position: fixed;
+  top:0;
+  z-index: 2;
+  background: #fff;
+}
+.editItem {
+  width: 75%;
+  height: 160rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center
+}
+
+.editItem2 {
+  width: 92%;
+  height: 160rpx;
+  background: #f9f9f9;
+  margin: 0 auto 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+
+}
+.sceneName{
+  font-size: 30rpx;
+  display:block;
+  color: #55585A;
+  margin-top: 58rpx;
+
+}
+.sceneNameicon{
+  height: 27.59rpx;
+  width: 32rpx;
+  position: absolute;
+  right: 0;
+  top: 58rpx;
+}
+.checked {
+  width: 42rpx;
+  height: 42rpx;
+  float: left;
+  position: relative;
+}
+.unchecked {
+  width: 22rpx;
+  height: 22rpx;
+  float: left;
+  position: relative;
+}
+
+.checkContainer {
+  height: 160rpx;
+  width: 104rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.roomDevice-names {
+  float:left;
+  line-height: 40rpx;
+  margin-left:32.5px;
+  height: 160rpx;
+  font-family:PingFangSC-Regular;
+  font-size: 32rpx;
+  color:#55585A;
+  width: 227rpx;
+  padding-top: 58rpx;
+}
+
+.deviceIcon {
+  height: 85rpx;
+  width: 85rpx;
+  display: flex;
+  float: left;
+}
+
+.deviceName {
+  float: left;
+  line-height: 160rpx;
+  width: 275rpx;
+  margin-left: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #55585A;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  display: block
+}
+
+.switchButton {
+  float:right;
+  margin-right: 40rpx;
+  margin-top: 0;
+}
+.sceneOff{
+  margin: 0 55rpx 0 0;
+}
+.deleteScene{
+  width: 208px;
+  height: 92rpx;
+  background:#ff8443;
+  border-radius: 150rpx;
+  color:#fff;
+  font-family:PingFangSC-Regular;
+  font-size: 30rpx;
+  line-height: 91rpx;
+  margin: 0 auto 80rpx;
+  text-align: center
+
+}
+.switch-btn-new{
+  margin-top: 0
+}
+.room-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 30rpx;
+  /* align-items: center; */
+}
+.select-all{
+ color: #7CD0FF;
+ font-family: PingFangSC-Medium;
+}
+.check-all{
+  color: #7CD0FF;
+  font-family: PingFangSC-Medium;
+  padding-right: 165rpx;
+}
+.unchecked-all{
+  margin-left: 100rpx;
+  height: 107rpx;
+  line-height:120rpx; 
+  display: block;
+  width: 120rpx;
+  float: left;
+}
+.checked-all{
+  height: 107rpx;
+  line-height:120rpx; 
+  display: block;
+  width: 120rpx;
+  float: left
+}
+.disnone{
+  display: none
+}

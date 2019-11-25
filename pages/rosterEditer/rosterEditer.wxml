@@ -1,0 +1,17 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<template is="showToast" data="{{showToast: showToast}}" />
+<view class='bindAll'>
+  <view class='bindAccount'>
+    <image class='bindicon' src='../../imgs/phoneicon.png'></image>
+    <view class='bindtext bindoff' wx:if="{{!information.mobile}}">未绑定</view>
+    <view class='bindtext bindon' wx:if="{{information.mobile}}">已绑定</view>
+    <view class='bind-account' wx:if="{{information.mobile}}">{{information.mobile}}</view>
+</view>
+<view class='bindAccount'>
+  <image class='bindicon' src='../../imgs/emailicon.png'></image>
+  <view class='bindtext bindoff' wx:if="{{!information.email}}">未绑定</view>
+  <view class='bindtext bindon' wx:if="{{information.email}}">已绑定</view>
+  <view class='bind-account' wx:if="{{information.email}}">{{information.email}}</view>
+</view>
+<view class='xy-delete' wx:if="{{!mySelf}}" bindtap='deleteRosterUser'>删除</view>
+</view>

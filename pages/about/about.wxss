@@ -1,0 +1,64 @@
+/* pages/about/about.wxss */
+.about-connect{
+  padding-bottom: 43rpx;
+}
+.about-logo{
+  height: 286rpx;
+  width: 174rpx;
+  display: block;
+  margin: 113rpx auto 70rpx;
+}
+text{
+  display: block;
+  text-align: center;
+}
+.xy-title{
+  color: #2d3b46;
+  font-size: 40rpx;
+  font-family: MyriadPro-Light;
+  line-height: 40rpx;
+  letter-spacing: 4rpx;
+}
+.xy-wel{
+  font-family: MyriadPro-Light;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #abb1b5;
+  margin-top: 18rpx;
+}
+.xy-version{
+  color: #abb1b5;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  font-family: PingFangSC-Regular;
+  margin-top: 27rpx;
+}
+.xy-score{
+  color: #2d3b46;
+  font-size: 28rpx;
+  border-bottom: 2rpx solid #889096;
+  line-height: 107rpx;
+  padding-left: 28rpx;
+}
+.new-version{
+  float: right;
+  margin-right: 30rpx;
+  height: 17rpx;
+  width: 17rpx;
+  background: #ff7676;
+  border-radius: 100%;
+  margin-top: 50rpx;
+}
+.xy-gflink{
+  color: #9eb8c5;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  margin-top: 379rpx;
+  font-family: PingFangSC-Regular;
+}
+.xy-ver{
+  color: #c0d3dc;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  margin-top: 15rpx
+}

@@ -1,0 +1,18 @@
+<view class='container invitation conniter'>
+  <view class='invitation-top'>
+    <image src='../../imgs/invitation_img.png'></image>
+    <view class='top-name'><text class='name-user'>{{add_homecenter.ByDisplayName}}</text>请求加入</view>
+      </view>
+    <view class='box-name'>{{add_homecenter.DeviceName}}: </view>
+    <view class='box-detail'>
+      <image src='../../imgs/invitation_box.png'></image>
+      <view class='text-name'><text decode="{{true}}">&nbsp;&nbsp;&nbsp;名称: </text>{{add_homecenter.DeviceName}}</view>
+      <view class='text-name'><text>序列号: </text>{{add_homecenter.DeviceName}}</view>
+    </view>
+  <view bindtap='refuseBtn' style='border:2rpx solid #fff;' class='invitation-btn'>拒绝
+    <image src='../../imgs/border.png' class='border-line'></image>
+  </view>
+  <view bindtap='agreeBtn' class='invitation-btn btn-posi'>同意
+   <image src='../../imgs/border.png' class='border-line'></image>
+  </view>
+</view>

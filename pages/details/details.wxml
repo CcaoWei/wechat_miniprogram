@@ -1,0 +1,427 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<view class='continal'>
+  <template is="showToast" data="{{showToast: showToast}}" />
+  <view class='detailsTop {{deviceBg}}' animation="{{bgcolorAn}}">
+    <image bindtap='onoffchange' data-info="{{detailsIfm.device.parentUuid}}" src='{{detailsIfm.detailsImg}}' class='detailsImg {{winWidth > 500 ? "imgTop" : ""}}'></image>
+    <view class='doorall' wx:if="{{detailsIfm.device.profile == 3}}">
+      <view class='bigDoorSen' animation="{{doorL}}"></view>
+      <view class='littleDoorSen' animation="{{doorR}}"></view>
+    </view>
+    <view class='man-top' wx:if="{{detailsIfm.device.profile == 0}}">
+      <view class='LhasP' style='opacity:{{opacityL}}'>
+        <image class='pirIconL' src='../../imgs/icon_pir_alarm2.png'></image>
+      </view>
+      <view class='RhasP' style='opacity:{{opacityR}}'>
+        <image class='pirIconR' src='../../imgs/icon_pir_alarm2.png'></image>
+      </view>
+      <view class='littleCir'></view>
+      <view class='bigCir'></view>
+    </view>
+    <view class='air-tem' wx:if="{{airtem}}">{{airtem}}</view>
+    <view class='top-icon' wx:if="{{detailsIfm.device.Available}}">
+      <view class='icon-item' wx:for="{{iconList}}" wx:key="j" wx:if="{{item.icontype}}">
+        <view class='electricity' wx:if="{{item.electricity}}">
+          <view class='relEle' style='width:{{item.electricity}}%' wx:if='{{item.electricity <= 85}}'></view>
+          <view class='relEle' style='width:{{item.electricity}}%;border-radius:30rpx 10rpx 10rpx 30rpx' wx:if='{{item.electricity >= 86 && item.electricity < 95}}'></view>
+          <view class='relEle' style='width:{{item.electricity}}%;border-radius:30rpx' wx:if='{{item.electricity >= 95}}'></view>
+        </view>
+        <image src='{{item.icon}}' class='{{item.icontype}}'></image>
+        <text class='item-top'>{{item.top}}</text>
+      </view>
+    </view>
+    <view class='off-lineAll {{winWidth > 500 ? "offlineleft" : ""}}' wx:if="{{detailsIfm.device.Available == false && !detailsIfm.device.model}}">
+      <image class='icon-offline' src='../../imgs/icon_online.png'></image>
+      <view class='off-lineBt'>离线</view>
+    </view>
+
+    <view class='off-lineAll {{winWidth > 500 ? "offlineleft" : ""}}' wx:if="{{detailsIfm.device.Available == false && detailsIfm.device.model && detailsIfm.device.logicDevice[0].Available == false}}">
+      <image class='icon-offline' src='../../imgs/icon_online.png'></image>
+      <view class='off-lineBt'>离线</view>
+    </view>
+  </view>
+    <view class="air-set-item" wx:for="{{airSetList}}" wx:key="i" wx:for-item="airListItem">
+       <picker range="{{airListItem.array}}" bindchange='settingAirConditionItem' value="{{airListItem.index}}" disabled='{{index == 4}}' >
+      <view class="commons" bindtap='selectedIndex' data-type='{{airListItem.type}}'>
+          <view class='commonsBt'>{{airListItem.name}}</view>
+          <image class="more" src="../../imgs/icon_nexts.png"></image>
+          <view class="commonText">{{airListItem.value}}</view>
+        </view>
+      </picker>
+    </view>
+   
+  
+  <view class='binding' wx:if='{{everyDevice && isLorS == false}}'>
+    <text class='bindingText' wx:if="{{!supportAutomation}}">绑定</text>
+    <view class='bindingDetail' wx:if="{{detailsIfm.device.profile != 7}}">
+      <image src='{{everyDevice.iconImg}}' class='alarm'></image>
+      <view class='inform'>
+        <text class='informBt'>{{everyDevice.bt}}</text>
+        <text class='informText'>{{everyDevice.text}}</text>
+      </view>
+      <view class='switch-btn-new {{everyDevice.switchEnable ? " " : "switch-btnbg"}}'>
+        <view class='btn-dot' wx:if="{{everyDevice.switchEnable == false}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{load == true}}">
+
+            <view class='linebg {{everyDevice.switchEnable ? "linebg2" : ""}}' wx:if="{{load == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <text class='btn-text' wx:if="{{everyDevice.switchEnable  == false}}">{{everyDevice.stateR}}</text>
+        <text class='btn-text' wx:if="{{everyDevice.switchEnable == true}}">{{everyDevice.stateL}}</text>
+        <view class='btn-dot' wx:if="{{everyDevice.switchEnable == true}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{load == true}}">
+
+            <view class='linebg {{everyDevice.switchEnable ? "linebg2" : ""}}' wx:if="{{load == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <view class='bind-view' data-everydevice='true' data-switchenable='{{!everyDevice.switchEnable }}' bindtap='deviceSafety'></view>
+      </view>
+    </view>
+    <!-- 旋钮开关的绑定 -->
+    <view class='bindingDetail' wx:if="{{detailsIfm.device.profile == 7 & !supportAutomation}}">
+      <view bindtap='bindRedact' data-binduuid='{{deviceBind5.bind.uuid}}' data-types='4'>
+        <image src='../../imgs/rotary_knob_curtain.png' class='alarm'></image>
+        <view class='inform'>
+          <text class='informBt'>无线旋钮</text>
+          <text class='informText'>左旋右旋，精准控制</text>
+        </view>
+      </view>
+      <view wx:if='{{!deviceBind5.bind}}' class='icon-nextBind' data-binduuid='{{item.bind.uuid}}' data-types='4' bindtap='bindRedact'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+      <view wx:if='{{deviceBind5.bind}}' class='switch-btn-new {{deviceBind5.bind.enabled ? " " : "switch-btnbg"}}'>
+        <view class='btn-dot' wx:if="{{deviceBind5.bind.enabled == false}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{deviceBind5.loading == true}}">
+
+            <view class='linebg {{deviceBind5.bind.enabled ? "linebg2" : ""}}' wx:if="{{deviceBind5.loading == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <text class='btn-text' wx:if="{{deviceBind5.bind.enabled == false}}">停用</text>
+        <text class='btn-text' wx:if="{{deviceBind5.bind.enabled == true}}">启用</text>
+        <view class='btn-dot' wx:if="{{deviceBind5.bind.enabled == true}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{deviceBind5.loading  == true}}">
+
+            <view class='linebg {{deviceBind5.bind.enabled ? "linebg2" : ""}}' wx:if="{{deviceBind5.loading == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <view class='bind-view' data-types='4' data-binduuid="{{deviceBind5.bind.uuid}}" data-switchenable='{{!deviceBind5.bind.enabled}}' bindtap='initiateMode'></view>
+      </view>
+    </view>
+    <view class='bindingDetail' wx:if="{{detailsIfm.device.profile == 7 & !supportAutomation}}">
+      <view bindtap='keyType'>
+        <image src='../../imgs/rotary_knob_light.png' class='alarm'></image>
+        <view class='inform'>
+          <text class='informBt'>单击按键</text>
+          <text class='informText'>轻轻一按，全部搞定</text>
+        </view>
+      </view>
+      <view class='icon-nextBind' bindtap='keyType'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+    </view>
+
+    <view class='bindingDetail' wx:if="{{detailsIfm.device.profile == 7 & !supportAutomation}}">
+      <view bindtap='keyType' data-doublebind='true' data-binduuid='{{deviceBind4.bind.uuid}}' data-types='1'>
+        <image src='../../imgs/rotary_knob_light.png' class='alarm'></image>
+        <view class='inform'>
+          <text class='informBt'>双击按键</text>
+          <text class='informText'>快速双击，控制设备</text>
+        </view>
+      </view>
+      <view class='icon-nextBind' bindtap='keyType' data-doublebind='true' data-binduuid='{{deviceBind4.bind.uuid}}' data-types='1'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+    </view>
+    
+    <!-- 门磁绑定 -->
+    <view class='bindingDetail' wx:if="{{detailsIfm.device.profile == 3 & !supportAutomation}}">
+      <view bindtap='bindRedact' data-binduuid='{{deviceBind2.bind.uuid}}' data-types='2'>
+        <image src='../../imgs/door_light.png' class='alarm'></image>
+        <view class='inform'>
+          <text class='informBt'>芝麻开门</text>
+          <text class='informText'>门开门关，自动开关灯</text>
+        </view>
+      </view>
+      <view wx:if='{{!deviceBind2.bind}}' class='icon-nextBind' data-binduuid='{{item.bind.uuid}}' data-types='2' bindtap='bindRedact'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+      <view wx:if='{{deviceBind2.bind}}' class='switch-btn-new {{deviceBind2.bind.enabled ? " " : "switch-btnbg"}}'>
+        <view class='btn-dot' wx:if="{{deviceBind2.bind.enabled == false}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{deviceBind2.loading == true}}">
+
+            <view class='linebg {{deviceBind2.bind.enabled ? "linebg2" : ""}}' wx:if="{{deviceBind2.loading == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <text class='btn-text ss' wx:if="{{deviceBind2.bind.enabled == false}}">停用</text>
+        <text class='btn-text ss' wx:if="{{deviceBind2.bind.enabled == true}}">启用</text>
+        <view class='btn-dot' wx:if="{{deviceBind2.bind.enabled == true}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{deviceBind2.loading  == true}}">
+
+            <view class='linebg {{deviceBind2.bind.enabled ? "linebg2" : ""}}' wx:if="{{deviceBind2.loading == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <view class='bind-view' data-types='2' data-binduuid="{{deviceBind2.bind.uuid}}" data-switchenable='{{!deviceBind2.bind.enabled}}' bindtap='initiateMode'></view>
+      </view>
+    </view>
+    <!-- pir感应开关的绑定 -->
+    <view class='bindingDetail' wx:if="{{detailsIfm.device.profile == 0 & !supportAutomation}}">
+      <view bindtap='bindRedact' data-binduuid='{{deviceBind3.bind.uuid}}' data-types='3'>
+        <image src='../../imgs/switch_onLight.png' class='alarm'></image>
+        <view class='inform'>
+          <text class='informBt'>智能控灯</text>
+          <text class='informText'>有人经过，自动开灯</text>
+        </view>
+      </view>
+      <view wx:if='{{!deviceBind3.bind}}' class='icon-nextBind' bindtap='bindRedact' data-binduuid='{{deviceBind3.bind.uuid}}' data-types='3'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+      <view wx:if='{{deviceBind3.bind}}' class='switch-btn-new {{deviceBind3.bind.enabled ? " " : "switch-btnbg"}}'>
+        <view class='btn-dot' wx:if="{{deviceBind3.bind.enabled == false}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{deviceBind3.loading == true}}">
+
+            <view class='linebg {{deviceBind3.bind.enabled ? "linebg2" : ""}}' wx:if="{{deviceBind3.loading == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <text class='btn-text' wx:if="{{deviceBind3.bind.enabled == false}}">停用</text>
+        <text class='btn-text' wx:if="{{deviceBind3.bind.enabled == true}}">启用</text>
+        <view class='btn-dot' wx:if="{{deviceBind3.bind.enabled == true}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{deviceBind3.loading  == true}}">
+
+            <view class='linebg {{deviceBind3.bind.enabled ? "linebg2" : ""}}' wx:if="{{deviceBind3.loading == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <view class='bind-view' data-types='3' data-switchenable='{{!deviceBind3.bind.enabled}}' bindtap='initiateMode' data-binduuid="{{deviceBind3.bind.uuid}}"></view>
+      </view>
+
+
+
+    </view>
+    <view class='bindingDetail' wx:if="{{detailsIfm.device.profile == 0 & !supportAutomation}}">
+      <view bindtap='keyType' data-binduuid='{{deviceBind1.bind.uuid}}' data-types='1'>
+        <image src='../../imgs/switch_lamp.png' class='alarm'></image>
+        <view class='inform'>
+          <text class='informBt'>单击按键</text>
+          <text class='informText'>轻轻一按，全部搞定</text>
+        </view>
+      </view>
+      <view class='icon-nextBind' bindtap='keyType'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+    </view>
+
+    <view class='bindingDetail' wx:if="{{detailsIfm.device.profile == 0 & !supportAutomation}}">
+      <view bindtap='keyType' data-binduuid='{{deviceBind4.bind.uuid}}' data-types='1' data-doublebind='true'>
+        <image src='../../imgs/switch_lamp.png' class='alarm'></image>
+        <view class='inform'>
+          <text class='informBt'>双击按键</text>
+          <text class='informText'>快速双击，控制设备</text>
+        </view>
+      </view>
+      <view class='icon-nextBind' bindtap='keyType' data-doublebind='true'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+    </view>
+
+  </view>
+  <view class='' wx:if='{{detailsIfm.device.model}}'>
+    <text class='bindingText' wx:if="{{uiWallSwitch.uiWallLight.length > 0}}">灯光</text>
+    <view class='room-device' wx:for="{{uiWallSwitch.uiWallLight}}" wx:key="i">
+      <view class='detailUrl'>
+        <image class='room-pic' src='{{item.deviceimg}}'></image>
+        <view class='roomDevice-name'>{{item.device.name || item.device.uiUuid}}</view>
+      </view>
+      <view class='device-btns' wx:if="{{!item.switchEnable && !item.device.Available}}">
+        <image class='offlineimg' src='../../imgs/icon_offline.png'></image>
+        <text class='offline'>离线</text>
+      </view>
+      <view wx:if="{{(item.switchEnable || item.switchEnable == false) && item.device.Available == true}}" class='switch-btn-new switch-btn {{item.switchEnable ? " " : "switch-btnbg"}}'>
+        <view class='btn-dot' wx:if="{{item.switchEnable == false}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{item.load == true}}">
+
+            <view class='linebg {{item.switchEnable ? "linebg2" : ""}}' wx:if="{{item.load == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <text class='btn-text' wx:if="{{item.switchEnable  == false}}"></text>
+        <text class='btn-text' wx:if="{{item.switchEnable == true}}"></text>
+        <view class='btn-dot' wx:if="{{item.switchEnable == true}}">
+          <!-- 这个里面是点点 -->
+          <view class='allline' wx:if="{{item.load == true}}">
+
+            <view class='linebg {{item.switchEnable ? "linebg2" : ""}}' wx:if="{{item.load == true}}">
+              <view class='line-all line1'></view>
+              <view class='line-all line2'></view>
+              <view class='line-all line3'></view>
+              <view class='line-all line4'></view>
+              <view class='line-all line5'></view>
+              <view class='line-all line6'></view>
+              <view class='line-all line7'></view>
+              <view class='line-all line8'></view>
+            </view>
+          </view>
+        </view>
+        <view class='bind-view' data-switchenable='{{!item.switchEnable}}' data-profile='{{item.device.profile}}' data-types='wallLight' data-uuid='{{item.device.uuid}}' bindtap='switchtap' data-parentuuid="{{item.parent}}"></view>
+      </view>
+
+    </view>
+
+    <text class='bindingText' wx:if="{{uiWallSwitch.uiWallKeyprass.length > 0 & !supportAutomation}}">绑定</text>
+     <text class='bindingText' wx:if="{{uiWallSwitch.uiWallKeyprass.length > 0 & !supportAutomation}}">空调内机</text>
+    <view class='room-device' wx:for="{{uiWallSwitch.uiWallKeyprass}}" wx:key="i" wx:if="{{!supportAutomation}}">
+      <view class='detailUrl' bindtap='keypressBind' data-profile='{{item.device.profile}}' data-information='{{item.device.uuid}}'>
+        <image class='room-pic' src='{{item.deviceimg}}'></image>
+        <view class='roomDevice-name'>{{item.device.name || item.device.uiUuid}}</view>
+      </view>
+      <view bindtap='keypressBind' data-information='{{item.device.uuid}}' class='icon-nextBind' data-profile='{{item.device.profile}}'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 开关模块的输入 -->
+  <view class="moudel-view" wx:if="{{detailsIfm.device.model == 'TERNCY-SM01-D2'}}">
+    <view class='settings'>输入</view>
+    <view class='room-device' bindtap='inputConfiguration' data-information='{{detailsIfm.device.logicDevice[0].uuid}}' data-parentuuid="{{detailsIfm.device.uuid}}" data-inputindex="0">
+      <view class='detailUrl'>
+        <image class='room-pic' src='../../imgs/inputL.png'></image>
+        <view class='roomDevice-name'>输入1</view>
+      </view>
+      <view class='icon-nextBind'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+    </view>
+    <view class='room-device' bindtap='inputConfiguration' data-information='{{detailsIfm.device.logicDevice[1].uuid}}' data-parentuuid="{{detailsIfm.device.uuid}}" data-inputindex="1">
+      <view class='detailUrl'>
+        <image class='room-pic' src='../../imgs/inputR.png'></image>
+        <view class='roomDevice-name'>输入2</view>
+      </view>
+      <view class='icon-nextBind'>
+        <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+      </view>
+    </view>
+  </view>
+
+  
+
+
+  <view class='settings'>设置</view>
+  <view class='commons' bindtap='rename'>
+    <text class='commonsBt'>名称</text>
+    <image src='../../imgs/icon_nexts.png' class='more'></image>
+    <view class='commonText' wx:if="{{detailsIfm.device}}">{{detailsIfm.device.name || detailsIfm.device.uiname}}</view>
+    <view class='commonText' wx:if="{{!detailsIfm.device}}">{{detailsIfm.name || detailsIfm.uiname}}</view>
+  </view>
+  <view class='commons' bindtap='revampAreaName'>
+    <text class='commonsBt'>房间</text>
+    <image src='../../imgs/icon_nexts.png' class='more'></image>
+    <view class='commonText'>{{detailsIfm.areaName}}</view>
+  </view>
+  <view class='commons' bindtap='curtainType' wx:if="{{detailsIfm.device.profile == 5}}">
+    <text class='commonsBt'>类型</text>
+    <image src='../../imgs/icon_nexts.png' class='more'></image>
+    <view class='commonText'>{{detailsIfm.curtainType}}</view>
+
+  </view>
+  <view class='commons' bindtap='curtainWay' wx:if="{{detailsIfm.device.profile == 5}}">
+    <text class='commonsBt'>方向</text>
+    <image src='../../imgs/icon_nexts.png' class='more'></image>
+    <view class='commonText'>{{detailsIfm.curtainWay}}</view>
+  </view>
+  <view class='commons' bindtap='correct' wx:if="{{detailsIfm.device.profile == 5}}">
+    <text class='commonsBt'>是否已校准行程</text>
+    <view class='commonText mr-30'>{{adjusting}}</view>
+  </view>
+  <view class='commons' bindtap='littlePage'>
+    <text class='commonsBt'>其他</text>
+    <image src='../../imgs/icon_nexts.png' class='more'></image>
+    <!-- <view class='commonText'>{{detailsIfm.rssi}}</view> -->
+  </view>
+  <view class='deleteBtn' bindtap='deleteBtn'>删除</view>
+</view>

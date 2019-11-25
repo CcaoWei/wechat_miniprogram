@@ -1,0 +1,41 @@
+/* pages/addRoster/addRoster.wxss */
+.step{
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #6E869A;
+  line-height: 42rpx;
+  margin:45rpx 0 2rpx 0;
+}
+.stepone{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #6E869A;
+  line-height: 47rpx;
+  height: 118rpx;
+  margin-top: 5rpx;
+}
+.steptwo{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #65B9FF;
+  line-height: 42rpx;
+}
+.conniters{
+  width: 90%;
+  margin: 0 auto;
+}
+.box-de{
+  height: 338rpx;
+  width: 320rpx;
+  margin: 227rpx auto 0;
+  display: block;
+}
+.fl{
+  height: 100%;
+  display: block;
+  float: left;
+  width: 88%;
+}
+.num{
+  width: 30rpx
+}

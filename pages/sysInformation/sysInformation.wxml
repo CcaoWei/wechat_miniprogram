@@ -1,0 +1,40 @@
+<view class='conniter' wx:if="{{!roster && !upgradePolicy}}">
+  <view class='xy-devicename'>
+    <text class='dn-name'>设备地址</text>
+    <text class='dn-rel'>{{uuid}}</text>
+  </view>
+  <view class='xy-devicename'>
+    <text class='dn-name'>无线信道</text>
+    <text class='dn-rel'>{{uiChannel}}</text>
+  </view>
+  <view class='xy-devicename'>
+    <text class='dn-name'>版本号</text>
+    <text class='dn-rel'>{{uiVersion}}</text>
+  </view>
+</view>
+<view class='conniter' wx:if="{{roster}}">
+  <view class='roster-boxname'>{{roster.name}}</view>
+  <view class='roster-item' bindtap='compileRoster' data-username='{{item.Username}}' wx:for="{{roster.roster}}" wx:key="i">
+    <!-- <image src='../../imgs/big_header.jpg' class='roster-touxiang'></image> -->
+    <view class='roster-name'>{{item.Nickname}}</view>
+    <view class='roster-states' wx:if="{{item.Type == 2}}">等待授权中...</view>
+    <image class='icon-next rosterNext' src='../../imgs/icon_nexts.png'></image>
+  </view>
+</view>
+<view class='conniter' wx:if="{{upgradePolicy}}">
+
+  <radio-group class="radio-group">
+    <label class="xy-devicename" bindtap='setUpgradePolicy' data-infomation='stable'>
+      稳定版
+      <radio value="stable" class='radiobtn' checked="{{stable}}"/>
+    </label>
+    <label class="xy-devicename" bindtap='setUpgradePolicy' data-infomation='beta'>
+      用户测试版（比较稳定的新功能体验）
+      <radio value="beta" class='radiobtn' checked="{{beta}}"/>
+    </label>
+    <label class="xy-devicename" bindtap='setUpgradePolicy' data-infomation='alpha'>
+      开发版（最新功能尝试）
+      <radio value="alpha" class='radiobtn' checked="{{alpha}}"/>
+    </label>
+  </radio-group>
+</view>

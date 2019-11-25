@@ -1,0 +1,34 @@
+/* pages/addHelpDetails/addHelpDetails.wxss */
+.addHelp-details{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.details-imgbox{
+  height: 400rpx;
+  width: 416.7rpx;
+  margin: 222.6rpx auto 0;
+  display: block;
+  /* background: pink; */
+  position: relative;
+}
+.details-text{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #899198;
+  margin-top: 140rpx;
+  width: 100%;
+  display: block;
+  text-align: center;
+  line-height: 45rpx;
+}
+.details-img{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.pirWidth{
+  width: 494rpx;
+}

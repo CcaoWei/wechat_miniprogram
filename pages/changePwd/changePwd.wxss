@@ -1,0 +1,70 @@
+.connect{
+  height: 100vh;
+  width: 100%;
+}
+.old-pwd{
+  height:120rpx;
+  width: 77%;
+  float: left;
+  font-size:30rpx;
+}
+.forget-pwd{
+  width: 93%;
+  height:121rpx;
+  margin: 0 auto;
+  text-align: right;
+  line-height:121rpx;
+  font-family: PingFangSC-Regular;
+  font-size:30rpx;
+  color: #65B9FF;
+}
+.placeholder-class{
+  opacity: 0.5;
+  font-family: PingFangSC-Regular;
+  font-size:30rpx;
+  color: #2D3B46;
+}
+.submit-btn{
+  border:2rpx solid #ccc;
+  border-radius: 150rpx;
+  height: 91.5r;
+  width: 416.7rpx;
+  margin: 106rpx auto;
+  font-family: PingFangSC-Regular;
+  font-size:30rpx;
+  color: #2D3B46;
+  line-height: 91rpx;
+  text-align: center
+}
+.input-box{
+  width: 93%;
+  border-bottom:2rpx solid #ccc;
+  height:120rpx;
+  margin: 0 auto;
+}
+.close-box{
+  height:76rpx;
+  width: 60rpx;
+  float: right;
+  box-sizing: content-box;
+  padding-top: 44rpx;
+}
+.close-icon{
+  height: 32rpx;
+  width: 32rpx;
+  float: right;
+}
+.eye-box{
+  height: 70rpx;
+  width: 72rpx;
+  float: right;
+  box-sizing: content-box;
+  padding-top: 50rpx;
+}
+.eye-icon{
+  height: 23rpx;
+  width: 32rpx;
+  float: right;
+  display: block;
+
+}

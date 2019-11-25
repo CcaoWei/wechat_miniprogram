@@ -1,0 +1,59 @@
+  <view class='{{clname ? "my-contentbg" : "my-content"}} allother'>
+    <view class='xy-navs'>
+      <view class='indexxy-nav'>
+        <view class='xy-menu' bindtap="tap_ch">
+          <view class='line'></view>
+          <view class='line'></view>
+          <view class='line'></view>
+        </view>
+        <image src='../../imgs/ic_launcher.png' class='my-logo'></image>
+      </view>
+    </view>
+    <view class='buddha-information'>
+       <image src='../../imgs/touxiangbg.png' class='touxiangbg'></image> 
+      <image src='{{information.headPortrait}}' class='my-buddha'></image>
+      <text class='xy-name'>{{information.nickname}}</text>
+    </view>
+     <navigator url="../bindingAccount/bindingAccount" hover-class="none">
+      <view class='my-item'>
+        账号绑定
+        <image src='../../imgs/icon_nexts.png' class='icon-next next-icon'></image>
+      </view>
+    </navigator>
+    <!-- <web-view src="https://xiaoyan.io/zh-cn/blog/"></web-view> -->
+    <navigator url='../changePwd/changePwd' hover-class='none'>
+      <view class="my-item">
+        修改登录密码
+        <image src='../../imgs/icon_nexts.png' class='icon-next next-icon'></image>
+      </view>
+    </navigator>
+    <navigator url='../interlinkage/interlinkage' hover-class='none'>
+    <view class="my-item">
+      帮助
+      <image src='../../imgs/icon_nexts.png' class='icon-next next-icon'></image>
+    </view>
+    </navigator>
+    <!-- <navigator url="../interlinkage/interlinkage" hover-class='none'>
+      <view class='my-item'>
+        选购指南
+        <image src='../../imgs/icon_nexts.png' class='icon-next next-icon'></image>
+      </view>
+    </navigator> -->
+    <!-- <contact-button 
+      type="default-light" 
+      size="20"
+      session-from="weapp"
+      class='my-item'
+    >
+    客服消息
+    </contact-button> -->
+    <!-- <button class='my-item' open-type="contact">消息</button> -->
+    <navigator url="../about/about" hover-class='none'>
+      <view class='my-item'>
+        关于我们
+        <image src='../../imgs/icon_nexts.png' class='icon-next next-icon'></image>
+      </view>
+    </navigator>
+  </view>
+
+  <slot></slot>

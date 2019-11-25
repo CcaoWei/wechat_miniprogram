@@ -1,0 +1,197 @@
+/* pages/firmwareUpdate/firmwareUpdate.wxss */
+.overall{
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+}
+.updataAll{
+  height: 114rpx;
+  width: 100%;
+  background: #fff;
+}
+.updataAll-btn{
+  height: 54rpx;
+  width: 162rpx;
+  float: right;
+  background: #8B98A7;
+  border-radius: 300rpx;
+  margin: 30rpx 30rpx 0 0;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 54rpx;
+}
+.updata-detail{
+  width: 690rpx;
+  height: auto;
+  margin: 0 auto 30rpx;
+  background: #f5f5f5;
+}
+.updata-bt{
+  height: 103rpx;
+  width: 100%;
+  font-family: PingFangSC-Medium;
+  font-size: 28rpx;
+  color: #899198;
+  line-height: 103rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.updata{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  height: 54rpx;
+  width: 112rpx;
+  float: right;
+  line-height: 54rpx;
+  margin: 25rpx 0 0 0;
+  background: #8B98A7;
+  border-radius: 300rpx;
+  text-align: center;
+}
+.devicedetail{
+  height: 160rpx;
+  width: 630rpx;
+  margin: 0 auto;
+  background: #f5f5f5;
+  border-bottom: 2rpx solid #c4c4c4;
+}
+.border-none{
+  border: 0 solid #fff;
+}
+.newDevicesimg{
+  height: 160rpx;
+  width: 160rpx;
+   display: block;
+  float: left;
+}
+.contentall{
+  height: 100%;
+  width: 298rpx;
+  float: left;
+  margin-left: 32rpx;
+  position: relative;
+}
+.contentbt{
+  opacity: 0.73;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #2D3B46;
+  line-height: 42rpx;
+  display: block;
+  margin: 42rpx 0 5rpx 0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width: 227rpx;
+}
+.contenttext{
+  opacity: 0.5;
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #899198;
+  line-height: 24rpx;
+  display: block;
+}
+.option{
+  width: 32rpx;
+  height: 32rpx;
+  box-sizing: border-box;
+  background: #E1E1E1;
+  border: 2rpx solid #C9C9C9;
+  border-radius: 100%;
+  float: right;
+  margin: 70rpx 0 0 0;
+  position: relative;
+}
+.selected{
+  height: 44.6rpx;
+  width: 44.6rpx;
+  top: -9rpx;
+  left: -7rpx;
+  display: block;
+  position: absolute;
+
+}
+.noSelected{
+  height: 43.8rpx;
+  width: 43.8rpx;
+  top: -16rpx;
+  left: -15rpx;
+  display: none;
+  position: absolute;
+}
+.cir{
+  display: inline-block;
+}
+.top,.bgimg{
+  height: 58rpx;
+  width: 58rpx;
+  position:absolute;
+  top: -13rpx;
+  left: -7.6rpx;
+  background: #f5f5f5;
+  /* display: none; */
+}
+.tops,.bgimgs{
+  display: none;
+  height: 56rpx;
+  width: 56rpx;
+  position:absolute;
+  top:-18rpx;
+  left:-20rpx;
+  z-index: 1;
+}
+.cc{
+  position:absolute;
+  top: 18rpx;
+  font-size: 14rpx;
+  left:50%;
+  color:#646e76;
+  width: 36rpx;
+  margin-left: -18rpx;
+  z-index: 3;
+  text-align: center;
+  line-height: 18rpx;
+}
+.bgimg{
+  z-index: 1
+}
+.stopUpdata{
+  font-size: 21rpx;
+  height: 64rpx;
+  background:#f5f5f5;
+  width: 115rpx;
+  position:absolute;
+  line-height: 65rpx;
+  right: -11rpx;
+  top: -22rpx;
+  color: #999;
+  z-index: 4;
+}
+.okUpdata{
+  z-index: 5;
+}
+.none{
+  display: none
+}
+.nowVersion{
+  position: absolute;
+  bottom: 25rpx;
+  left: 0;
+  font-size:21rpx;
+  height:64rpx;
+  line-height:65rpx;
+  color: #999;
+}
+.look-new-metergasis{
+  float: right;
+  font-family:PingFangSC-Regular;
+  font-size:28rpx;
+  color:#899198;
+  height:110rpx;
+  line-height:100rpx;
+  margin:0 103rpx 0 0;
+}

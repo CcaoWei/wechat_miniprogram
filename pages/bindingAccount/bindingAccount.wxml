@@ -1,0 +1,72 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<template is="showToast" data="{{showToast: showToast}}" />
+<view class='bindAll'>
+  <view class='bindAccount'>
+    <image class='bindicon' src='../../imgs/phoneicon.png'></image>
+    <view class='bindtext bindoff' wx:if="{{mobile == false}}">未绑定</view>
+    <view class='bindtext bindon' wx:if="{{mobile == true}}">已绑定</view>
+    <view class='bind-account' wx:if="{{mobile == true}}">{{mobilevalue}}</view>
+    <checkbox-group bindchange="checkboxChange" data-types="sms" data-check="{{!numCheck}}" class="checkbox-all" wx:if="{{mobile == true}}">
+      <label class='check-label'>
+        <checkbox checked="{{numCheck}}" class='check-box' />
+        <view class='ismessage phomeMsg'>通过手机接收报警消息</view>
+      </label>
+    </checkbox-group>
+
+
+  <navigator url='../thirdPartyAccount/thirdPartyAccount?type=phone'>
+    <view class='bindcheck' wx:if="{{mobile == false}}">点击绑定</view>
+  </navigator>
+  <view class='bindcheck' bindtap='deleteMoblie' wx:if="{{mobile == true}}">解除绑定</view>
+</view>
+<view class='bindAccount'>
+  <image class='bindicon' src='../../imgs/emailicon.png'></image>
+  <view class='bindtext bindoff' wx:if="{{email == false}}">未绑定</view>
+  <view class='bindtext bindon' wx:if="{{email == true}}">已绑定</view>
+  <view class='bindtext bindonoff' wx:if="{{email == 'state'}}">待认证
+    <text class='gainCode' bindtap='getCode'>(获取验证码)</text>
+  </view>
+  <view class='bind-account' wx:if="{{email == true || email == 'state'}}">{{emailvalue}}</view>
+  <checkbox-group bindchange="checkboxChange" data-types="email"  data-check="{{!emailCheck}}" class="checkbox-all" wx:if="{{email == true}}">
+      <label class='check-label'>
+        <checkbox checked="{{emailCheck}}" class='check-box' />
+        <view class='ismessage phomeMsg'>通过邮件接收报警消息</view>
+      </label>
+    </checkbox-group>
+
+
+  <navigator url="../thirdPartyAccount/thirdPartyAccount?type=email">
+    <view class='bindcheck' wx:if="{{email == false}}">点击绑定</view>
+  </navigator>
+  <view class='bindcheck' bindtap='deleteemail' wx:if="{{email == true  || email == 'state'}}">解除绑定</view>
+</view>
+<view class='bindAccount'>
+  <image class='bindicon' src='../../imgs/wecharticon.png'></image>
+  <view class='bindtext weixinon' wx:if="{{weixin == true}}">已绑定</view>
+  <view class='bindtext weixinoff' wx:if="{{weixin == false}}">未绑定</view>
+    <checkbox-group bindchange="checkboxChange" data-types="wechat" data-check="{{!weixinCheck}}" class="checkbox-all" wx:if="{{weixin == true}}">
+      <label class='check-label'>
+        <checkbox checked="{{weixinCheck}}" class='check-box' />
+        <view class='ismessage'>在微信中接收报警信息
+          <view>
+            需关注小燕科技微信服务号
+          </view>
+        </view>
+      </label>
+    </checkbox-group>
+  <!-- <view class='bindcheck' wx:if="{{weixin == false}}">点击绑定</view>
+    <view class='bindcheck' wx:if="{{weixin == true}}">解除绑定</view> -->
+</view>
+<view class='bindAccount'>
+  <image class='bindicon' src='../../imgs/qqicon.png'></image>
+  <view class='bindtext bindoff' wx:if="{{qq == false}}">未绑定</view>
+  <view class='bindtext bindon' wx:if="{{qq == true}}">已绑定</view>
+  <view class='bind-account' wx:if="{{qq == true}}">123456789@qq.com</view>
+  <view class='check-view' wx:if="{{qq == true}}">
+    <!-- <checkbox style='width:24rpx;height:24rpx;' class='check-box'></checkbox> -->
+    <text class='ismessage'>通过邮件接收报警消息</text>
+  </view>
+  <!-- <view class='bindcheck' wx:if="{{qq == false}}">点击绑定</view>
+    <view class='bindcheck' wx:if="{{qq == true}}">解除绑定</view> -->
+</view>
+</view>

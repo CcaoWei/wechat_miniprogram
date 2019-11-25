@@ -1,0 +1,101 @@
+@import '../../utils/showToast/showToast.wxss';
+.addDevices{
+   width:100%;
+  height: 360rpx;
+  padding-top: 94rpx;
+}
+.circlebg{
+  width: 250rpx;
+  height: 250rpx;
+  background: #7CD0FF;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+.being{
+  opacity: 0.5;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #899198;
+  text-align: center;
+  width: 100%;
+}
+.handle{
+  font-family: PingFangSC-Regular;
+  width: 100%;
+  margin-top: 7rpx;
+  position: relative;
+  text-align: center;
+}
+.handle text{
+  font-size: 32rpx;
+  color: #899198;
+  /* width: 100%;
+  text-align: center; */
+  line-height: 48rpx;
+}
+.handle image{
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  top: 8rpx;
+  right: 185rpx;
+}
+.notFind{
+  font-family: PingFangSC-Regular;
+  font-size: 42rpx;
+  color: #D4D4D4;
+  line-height: 43rpx;
+  width: 100%;
+  padding-left: 40rpx;
+  margin-top: 38rpx;
+}
+.newDevices{
+  height: 160rpx;
+  width: 95%;
+  margin: 10rpx auto;
+  background: #fafafa;
+}
+.newDevices image{
+  width: 160rpx;
+  height: 160rpx;
+  display: block;
+  float: left;
+}
+.addDeviceName{
+/* width: 378rpx; */
+width: 300rpx;
+color:#55585a;
+font-size: 30rpx;
+float:left;
+line-height: 160rpx;
+text-align:center;
+
+}
+.addFacility{
+  width: 112rpx;
+  height: 54rpx;
+  float:right;
+  border-radius: 150rpx;
+  border:1px solid #d5d8da;
+  font-size: 30rpx;
+  text-align:center;
+  line-height: 54rpx;
+  margin: 51rpx 30rpx 0 0;
+  color: #55585a;
+  background: #fff;
+}
+.addFacility-hover{
+  background: #7CD0FF;
+  border:2rpx solid #7CD0FF;
+  color: #fff;
+}
+
+.find{
+  width: 100%;
+  padding-left: 22rpx;
+  font-size: 28rpx;
+  font-family:PingFangSC-Regular;
+  line-height:87rpx;
+  height: 72rpx;
+  color: #D4D4D4;
+}

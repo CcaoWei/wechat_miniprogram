@@ -1,0 +1,36 @@
+<!--pages/curtainWay/curtainWay.wxml-->
+<import src="../../utils/showToast/showToast.wxml" />
+<view class='curtain-way'>
+  <template is="showToast" data="{{showToast: showToast}}" />
+  <view class='curtain-text'>请确认当前窗帘的开合状态</view>
+  <view class='curtain-all' wx:if="{{curtainWays.types != 'c'}}">
+    <view class='curtain-directionLeft {{typesA ? "types-bg" : ""}}' bindtap='chooseType' data-types='a'>
+      <!-- <image src='{{curtainWays.leftIcon}}' class='direction-icon left-right'></image> -->
+      <image src='{{curtainWays.imgLeft}}' class='curtain-icon'></image>
+      <!-- <view class='curtain-directionText'>{{curtainWays.leftText}}</view> -->
+      <image class='select-icon' wx:if="{{typesA}}" src='../../imgs/select_icon.png'></image>
+    </view>
+    <view class='curtain-directionRight {{typesB ? "types-bg" : ""}}' bindtap='chooseType' data-types='b'>
+      <!-- <image src='{{curtainWays.rightIcon}}' class='direction-icon right-left'></image> -->
+      <image src='{{curtainWays.imgRight}}' class='curtain-icon'></image>
+      <!-- <view class='curtain-directionText'>{{curtainWays.rightText}}</view> -->
+      <image class='select-icon' wx:if="{{typesB}}" src='../../imgs/select_icon.png'></image>
+      
+    </view>
+  </view>
+  <view class='curtain-doubleOpen  {{typesA ? "types-bg" : ""}}' wx:if="{{curtainWays.types == 'c'}}" bindtap='chooseType' data-types='a'>
+    <image src='{{curtainWays.leftIcon}}' class='doubleOpen-icon icon-left'></image>
+    <image src='{{curtainWays.rightIcon}}' class='doubleOpen-icon icon-right'></image>
+    <image src='{{curtainWays.imgLeft}}' class='curtain-doubleicon'></image>
+    <view class='curtain-directionText'>{{curtainWays.leftText}}</view>
+    <image class='select-icon' wx:if="{{typesA}}" src='../../imgs/select_icon.png'></image>
+  </view>
+  <view class='curtain-doubleOpen  {{typesB ? "types-bg" : ""}}' wx:if="{{curtainWays.types == 'c'}}" bindtap='chooseType' data-types='b'>
+  <image src='{{curtainWays.rightIcon}}' class='doubleOpen-icon icon-left'></image>
+    <image src='{{curtainWays.leftIcon}}' class='doubleOpen-icon icon-right'></image>
+    <image src='{{curtainWays.imgRight}}' class='curtain-doubleicon mt-17'></image>
+    <view class='curtain-directionText'>{{curtainWays.rightText}}</view>
+    <image class='select-icon' wx:if="{{typesB}}" src='../../imgs/select_icon.png'></image>
+  </view>
+  <view class='next-btn' bindtap='wayBtn'>完成</view>
+</view>

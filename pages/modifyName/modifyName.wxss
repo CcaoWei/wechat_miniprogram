@@ -1,0 +1,147 @@
+.modifyName{
+  width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+}
+.confirm{
+  height: 102rpx;
+  width: 100%;
+}
+.confirm image{
+  height: 42rpx;
+  width: 42rpx;
+  float: right;
+  margin: 45.5rpx 30rpx 0 0;
+  display: block;
+}
+.compileName{
+  height: 90rpx;
+}
+.newName{
+  width: 100%;
+  /* margin: 0 auto; */
+  float: right;
+  border-bottom: 2rpx solid #eee;
+  position: relative;
+  font-size: 28rpx;
+  color: #c0c4c7;
+  line-height: 90rpx;
+  height: 90rpx;
+
+
+}
+/* .newName image{
+  position: absolute;
+  right: 25rpx;
+  top: 10rpx;
+  display: block;
+  height: 50rpx;
+  width: 50rpx;
+} */
+.chooseRoom{
+  width: 100%;
+  margin: 75rpx auto 0;
+  height: auto;
+}
+.roomName{
+  width: 95%;
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  margin-left: 34rpx;
+  height: 54rpx;
+}
+
+.selectBtn {
+  position:absolute;
+  height: 43.75rpx;
+  width: 43.75rpx;
+  bottom: 60rpx;
+  right: 30rpx;
+  display:none;
+}
+
+.imgBlock{
+  display: block;
+}
+.next-btn{
+  height: 91rpx;
+  width: 416rpx;
+  border:1px solid #999;
+  line-height: 100rpx;
+  text-align:center;
+  border-radius: 150rpx;
+  opacity:0.73;
+  font-family:PingFangSC-Regular;
+  font-size: 30rpx;
+  color:#2D3B46;
+  margin: 277rpx auto 0;
+}
+.areaitem{
+  width: 33.3%;
+  height: 145rpx;
+  margin-top: 44rpx;
+  float: left;
+}
+ .areaname{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width: 73%;
+  margin-left: 30rpx;
+}
+.unselected-binding {
+  width: 22rpx;
+  height: 22rpx;
+  margin: 10rpx;
+  position: absolute;
+  top:  60rpx;
+  right: 30rpx;
+}
+.add-room{
+  color: #ffb34d
+}
+.add-room-icon{
+  height: 40rpx;
+  width: 40rpx;
+  margin:0 30rpx 0 0;
+  position: absolute;
+  right: 0;
+}
+.save-box{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  z-index: 33;
+  width: 20%;
+}
+.save{
+  height: 41rpx;
+  width: 42rpx;
+  display:block;
+  float:right;
+  margin: 45.5rpx 30rpx 0 0;
+}
+.newName-box{
+  position: fixed;
+  top:  100rpx;
+  left: 0;
+  background: #fff;
+  z-index: 33;
+}
+.top0{
+  top: 0
+}
+.sceneNameicon{
+  top: 34rpx;
+}
+.saveBtn{
+  width: 100%;
+  height: 107rpx;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 4444;
+}

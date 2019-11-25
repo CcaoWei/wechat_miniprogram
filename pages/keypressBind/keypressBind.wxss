@@ -1,0 +1,57 @@
+.continer{
+  padding-top: 65rpx;
+}
+.binding{
+  width: 95%;
+  margin: 0 auto;
+}
+.bindingText{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #D4D4D4;
+  line-height: 94rpx;
+  height: 78rpx;
+  width: 100%;
+  display: block;
+}
+.bindingDetail{
+  height: 160rpx;
+  width: 100%;
+  margin: 0 auto 8rpx;
+  background: #FAFAFA;
+}
+.icon-nextBind{
+  height: 100%;
+}
+.informBt{
+  width: 100%;
+  display: block;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #FFB34D;
+  line-height: 45rpx;
+}
+.informText{
+  opacity: 0.5;
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #6E869A;
+  line-height: 25rpx;
+}
+.switchBtn{
+  margin: 43rpx 30rpx 0 0;
+  float: right
+}
+.alarm{
+  width: 180rpx;
+  height: 75rpx;
+  float: left;
+  margin: 42rpx 34rpx 0 28rpx;
+}
+.inform{
+  float: left;
+  width: 308rpx;
+  /* height: 100%; */
+  padding-top: 43rpx;
+}

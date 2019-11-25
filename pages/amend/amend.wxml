@@ -1,0 +1,7 @@
+<view class='conniter'>
+<view class='save-edit' bindtap='save'>
+<image src='../../imgs/save.png' class='edit'></image>
+</view>
+<input bindinput="amendBoxName" value="{{boxnickname}}"placeholder='{{boxnickname}}' class='amend' placeholder-style='color:#999;'></input>
+</view>
+

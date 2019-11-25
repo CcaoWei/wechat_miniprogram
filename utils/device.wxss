@@ -1,0 +1,131 @@
+.popup-example--center {
+  border-radius: 8rpx;
+}
+
+.popup-example--right .zan-popup__container {
+  top: 0;
+  bottom: 0;
+}
+
+.popup-example--left .zan-popup__container {
+  top: 0;
+  bottom: 0;
+}
+
+.popup-example--top .zan-popup__container {
+  left: 0;
+  right: 0;
+  padding: 30rpx;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 32rpx;
+}
+.popup-example--top .zan-popup__mask {
+  opacity: 0;
+}
+
+.popup-example--bottom .zan-popup__container {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.xy-room{
+  margin: 0 auto;
+  background:#fff;
+}
+.xy-roomSencen{
+  top:245rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-top: 12rpx;
+}
+.padt{
+  padding-bottom: 160rpx;
+}
+.room-name{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  line-height: 120rpx;
+  padding-left: 30rpx;
+  height: 107rpx;
+  display: block;
+}
+.room-device{
+  width: 95%;
+  height:  160rpx;
+  background: #f9f9f9;
+  margin: 10rpx auto 0;
+  position: relative;
+}
+
+.room-pic{
+  height: 85rpx;
+  width: 85rpx;
+  display: block;
+  float: left;
+  margin-left: 28rpx;
+  margin-top: 37rpx;
+
+}
+.roomDevice-name{
+  float: left;
+  line-height:  160rpx;
+  margin-left: 65rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #55585A;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width:  227rpx;
+}
+.roomDevice-names{
+  float: left;
+  font-size: 28rpx;
+  line-height: 160rpx;
+  color: #5d6062;
+  margin-left: 40rpx;
+}
+.device-btn{
+  float:right;
+  margin:51rpx 34rpx 0 0;
+  height:100rpx;
+  display:block;
+  line-height:51rpx;
+
+}
+.device-btns{
+  float: right;
+   margin: 64rpx 54rpx 0 0;
+}
+.addHomecenters,.addDevice{
+  text-align: center;
+  color: #333;
+  font-size: 36rpx;
+  margin: 40rpx 0;
+}
+.offlineimg{
+  height: 26rpx;
+  width: 26rpx;
+  display: block;
+  float: left;
+  margin-right:7rpx;
+}
+.offline{
+  display: block;
+  float: left;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  line-height: 32rpx;
+}
+.add-room{
+  color: #ffb34d
+}
+.add-room-icon{
+  height: 40rpx;
+  width: 40rpx;
+  margin: 60rpx 30rpx 0 0;
+}

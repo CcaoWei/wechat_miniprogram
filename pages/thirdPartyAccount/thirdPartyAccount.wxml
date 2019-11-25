@@ -1,0 +1,27 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<template is="showToast" data="{{showToast: showToast}}" />
+<view class="phoneaccount" wx:if="{{types == 'phone'}}">
+  <view class='input-css'>
+    <input type='number' placeholder-style="opacity: 0.3;font-family: PingFangSC-Regular;font-size: 15px;color: #2D3B46;" placeholder='请输入手机号' value='{{numVal}}' class='number-input' bindinput='numValue'></input>
+  </view>
+
+  <image wx:if="{{close == true}}" src='../../imgs/phoneclose.png' bindtap='purgeNum' class='close-val'></image>
+  <view class='code-all' bindtap='{{codeok == true ? "ercode" : ""}}'>
+    <view class='codebtn {{codeok == true ? "codebtn-color" : ""}}'>{{ercode}}</view>
+  </view>
+  <view class='input-css'>
+    <input type='text' placeholder-style="opacity: 0.3;font-family: PingFangSC-Regular;font-size: 15px;color: #2D3B46;" bindinput='codeValue' placeholder='请输入验证码' class='number-input' value='{{codeVal}}'></input>
+  </view>
+
+  <image wx:if="{{erclose == true}}" src='../../imgs/phoneclose.png' class='close-code' bindtap='purgeCode'></image>
+  <view class='submitBtn {{submit == true ? "submitBtn-color" : ""}}' bindtap='{{submit == true ? "submitbtn" : ""}}'>提交</view>
+</view>
+
+
+
+
+<view class='emailaccount' wx:if="{{types == 'email'}}">
+  <input class='email-input' placeholder='请输入邮箱' bindinput='emailValue' placeholder-style="opacity: 0.3;font-family: PingFangSC-Regular;font-size: 15px;color: #2D3B46;" value='{{codeVal}}'></input>
+  <image wx:if="{{email == true}}" src='../../imgs/phoneclose.png' class='close-code' bindtap='purgeCode'></image>
+  <view class='submitBtn {{emailSub == true ? "submitBtn-color" : ""}}' bindtap='{{emailSub == true ? "emailSub" : ""}}'>提交</view>
+</view>

@@ -1,0 +1,698 @@
+.continal{
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 1678rpx;
+}
+.detailsTop0,.detailsTop2{
+  height: 492rpx;
+  width: 100%;
+  background: #D6D6D6;
+}
+.detailsImg{
+  width: 492rpx;
+  height: 492rpx;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -246rpx;
+  z-index: 2;
+}
+.imgTop{
+  top: 2rpx;
+}
+.binding{
+  width: 95%;
+  margin: 0 auto;
+}
+.bindingText{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  line-height: 94rpx;
+  height: 78rpx;
+  width: 100%;
+  display: block;
+}
+.bindingDetail{
+  height: 160rpx;
+  width: 100%;
+  margin: 0 auto 8rpx;
+  background: #FAFAFA;
+}
+.room-device{
+  width: 100%;
+  margin: 10rpx auto 0;
+}
+.alarm{
+  width: 180rpx;
+  height: 75rpx;
+  float: left;
+  margin: 42rpx 30rpx 0 24rpx;
+}
+.inform{
+  float: left;
+  width: 240rpx;
+  padding-top: 43rpx;
+}
+.inform2{
+  width: 350rpx;
+}
+.informBt{
+  width: 100%;
+  display: block;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #FFB34D;
+  line-height: 45rpx;
+}
+.informText{
+  opacity: 0.5;
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #6E869A;
+  line-height: 45rpx;
+}
+.settings{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  width: 95%;
+  display: block;
+  height: 78rpx;
+  margin: 30rpx auto 0;
+  line-height: 94rpx;
+}
+.commons{
+  height: 100rpx;
+  width: 95%;
+  margin: 0 auto;
+  border-bottom: 2rpx solid #ccc;
+}
+.more{
+  height: 21rpx;
+  width: 13rpx;
+  float: right;
+  margin: 41rpx 0 0 23rpx;
+}
+.commonsBt{
+  opacity: 0.5;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #2D3B46;
+  line-height: 100rpx;
+  float: left;
+}
+.commonText{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #899198;
+  line-height: 100rpx;
+  float: right;
+}
+.mr-30{
+  margin-right: 30rpx;
+}
+.deleteBtn{
+  background: #FF8443;
+  border-radius: 100rpx;
+  height: 88rpx;
+  width: 400rpx;
+  margin: 270rpx auto 160rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 88rpx;
+}
+.detailsTop0{
+  box-sizing: border-box;
+  height: 492rpx;
+  width: 100%;
+  background: #D6D6D6;
+  position: relative;
+  padding-top: 330rpx;
+}
+.detailsTop1{
+  box-sizing: border-box;
+  height: 492rpx;
+  width: 100%;
+  background: #D6D6D6;
+  padding-top: 47rpx;
+}
+.detailsImg1{
+  width: 144.3rpx;
+  height: 303rpx;
+  display: block;
+  margin: 0 auto;
+}
+.littleCir{
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 100%;
+  background: #fff;
+  position: absolute;
+  top: 151.7rpx;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.bigCir{
+  height: 233rpx;
+  width: 233rpx;
+  border-radius: 100%;
+  background: #fff;
+  position: absolute;
+  top: 94rpx;
+  opacity: 0.4;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.electricityVal,.sunVal,.temperatureVal{
+  float: left;
+  line-height: 35rpx;
+  font-weight: 700;
+  margin-top: 5rpx;
+  /* font-family: MyriadPro-Regular; */
+  font-size: 35rpx;
+  color: #fff;
+}
+.temperatureVal{
+  width: 126rpx;
+}
+.sun{
+  height: 42rpx;
+  width: 42rpx;
+  float: left;
+  display: block;
+  margin: 0 13rpx 0 40rpx;
+}
+.temperature{
+  width: 21rpx;
+  height: 38rpx;
+  display: block;
+  float: left;
+  margin: 0 10.8rpx 0 0;
+}
+
+.relEle{
+  height: 100%;
+  background: #fff;
+  width: 62%;
+  border-radius: 30rpx 0 0 30rpx;
+}
+.detailsTop3{
+  height: 492rpx;
+  width: 100%;
+  background: #D6D6D6;
+}
+.detailsTop2s{
+  height: 492rpx;
+  width: 100%;
+  background: #FFB34D;
+  position:relative;
+}
+.onbg{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #FFB34D;
+  z-index: 1;
+}
+.onbgplug{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #8FD4FB;
+  z-index: 1;
+}
+.offbg{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #D6D6D6;
+  z-index: 1;
+}
+.off-lineAll{
+  position: absolute;
+  /* top: 203px; */
+  top: 415rpx;
+  width: 108rpx;
+  height: 30rpx;
+  left: 50%;
+  margin-left: -54rpx;
+  z-index: 2;
+}
+.offlineleft{
+   margin-left: -30rpx;
+}
+.icon-offline{
+  height: 30rpx;
+  width: 30rpx;
+  display: block;
+  float: left;
+  margin-top: 8rpx;
+}
+.off-lineBt{
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  float: left;
+  margin-left: 15rpx;
+}
+.detailsTop1s{
+  height: 492rpx;
+  width: 100%;
+  /* background: #8FD4FB; */
+}
+.detailsTop{
+  height: 492rpx;
+  width: 100%;
+  /* background: #8FD4FB; */
+  position: relative;
+}
+.detailsTop0s{
+  height: 492rpx;
+  width: 100%;
+  background: #8FD4FB;
+}
+.doorall{
+  height: 498rpx;
+  width: 640rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.bigDoorSen{
+  height: 247rpx;
+  width: 104rpx;
+  background: #fff;
+  border-radius: 60rpx 5rpx 5rpx 60rpx;
+  position: absolute;
+  z-index: 2;
+  top: 88rpx;
+  left: 215rpx;
+}
+.informations{
+  height: 40rpx;
+  position:absolute;
+  z-index:2;
+  top: 412rpx;
+  left:50%;
+  width: 360rpx;
+  transform:translate(-43%,-50%);
+  float:left;
+  border-radius: 40rpx;
+}
+.doorInformation{
+  width: 320rpx
+}
+.informationss{
+  height: 40rpx;
+  position: absolute;
+  z-index: 2;
+  top: 412rpx;
+  /* max-width: 375px; */
+  width: 44%;
+  line-height: 40rpx;
+  left: 53%;
+  transform: translate(-46%, -50%);
+}
+.pirWidth{
+   /* width: 522rpx; */
+   width: 73%;
+   top: 412rpx;
+}
+.littleDoorSen{
+  width: 86rpx;
+  height: 191rpx;
+  background: #fff;
+  border-radius: 5rpx 30rpx 30rpx 5rpx;
+  position: absolute;
+  z-index: 2;
+  right: 215rpx;
+  top: 138.3rpx;
+}
+.stateIcon{
+  height: 53rpx;
+  width: 53rpx;
+  float: left;
+   margin-left: 90rpx;
+  margin-top: 9rpx;
+}
+.information1{
+  position: absolute;
+  top: 430rpx;
+  z-index: 2;
+  height: 100rpx;
+  max-width: 750rpx;
+  left: 50%;
+  width: 460rpx;
+  transform: translate(-50%, -50%);
+}
+.other-info{
+  height: 66.7rpx;
+  width: 215rpx;
+  background: rgba(255, 255, 255, 0.2);
+  float: left;
+   margin-left:  100rpx;
+  border-radius: 40rpx;
+
+}
+.lightning{
+  height: 100%;
+}
+.lightning-icon{
+  height: 44rpx;
+  width: 85rpx;
+  float: left;
+  display: block;
+  margin: 12rpx 0 0 42rpx;
+}
+.lightningBt{
+ color: #fff;
+ float: left;
+ margin: 11rpx 0 0 15rpx;
+ font-size: 30rpx;
+}
+.lightning-next{
+  height: 28rpx;
+  width: 14rpx;
+  display: block;
+  float: left;
+  margin: 20rpx 0 0 25rpx;
+}
+.other-infos{
+  height: 66.7rpx;
+  width: 215rpx;
+  background: #DEDEDE;
+  float: left;
+  margin-left: 104rpx;
+  border-radius: 40rpx;
+}
+.onbgdoor{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #61EA68;
+  z-index: 1;
+}
+.onbgdooropen{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #FD7271;
+  z-index: 1;
+}
+.offbgdoor{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #D6D6D6;
+  z-index: 1;
+}
+.onbgpir{
+  background: #9CA8B6;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.dotlp{
+  height: 48rpx;
+  width: 48rpx;
+  position: absolute;
+  top: 195rpx;
+  left: 197rpx;
+  z-index: 3;
+}
+.dotrp{
+  height: 48rpx;
+  width: 48rpx;
+  position: absolute;
+  top: 188rpx;
+  left: 509rpx;
+  z-index: 3
+}
+.icon-nextBind{
+  height: 100%;
+}
+.nolight{
+  background: #D6D6D6;
+}
+.LhasP{
+  height: 83%;
+  width: 100%;
+  float: left;
+  animation: bgCartoonL 2.5s infinite;
+  animation-timing-function:linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+.RhasP{
+  height: 83%;
+  width: 100%;
+  float: left;
+  animation: bgCartoonR 2.5s infinite;
+  animation-timing-function:linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+.Lcanvas,.Rcanvas{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block;
+}
+.detailUrl{
+  /* width: 80%; */
+  width: 76%;
+  height: 160rpx;
+  float: left
+}
+.curtain-percent{
+  text-align: center;
+  width: 100%;
+  height: 40rpx;
+  font-size: 35rpx;
+  line-height: 40rpx;
+  color: #fff;
+  position: absolute;
+  bottom: 30rpx
+}
+.activePower{
+  position: absolute;
+  bottom: 30rpx;
+  height: 40px;
+  color: #fff;
+  left:50%;
+  margin-left: -372rpx;
+  width: 602rpx;
+}
+
+.activePower-text{
+  display: block;
+  float: left;
+  font-size: 32rpx;
+  font-weight: 700;
+  line-height: 53rpx;
+}
+/* .LhasPir,.RhasPir{
+  width:80rpx;
+  height:80rpx;
+  margin:80rpx auto;
+  background: green;
+} */
+.pirIconL{
+  height: 50rpx;
+  width: 50rpx;
+  display: block;
+  margin-left: 174rpx;
+  margin-top: 67rpx;
+  float: left;
+  /* position: absolute; */
+  animation: peopleCartoonL 2.5s infinite;
+  animation-timing-function:linear;
+
+
+}
+.pirIconR{
+  height:25px;
+  width:25px;
+  display: block;
+  margin-right: 174rpx;
+  margin-top: 67rpx;
+  float: right;
+  animation: peopleCartoonR 2.5s infinite;
+  animation-timing-function:linear;
+}
+.man-top{
+  height: 498rpx;
+  position: relative;
+}
+@keyframes bgCartoonL
+{
+  0%   {transform: rotate(0deg);}
+  50%  {transform: rotate(-70deg);}
+  100%   {transform: rotate(0deg);}
+}
+@keyframes peopleCartoonL
+{
+  0%   {transform: rotate(0deg);}
+  50%  {transform: rotate(70deg);}
+  100%   {transform: rotate(0deg);}
+}
+@keyframes bgCartoonR
+{
+  0%   {transform: rotate(0deg);}
+  50%  {transform: rotate(70deg);}
+  100%   {transform: rotate(0deg);}
+}
+@keyframes peopleCartoonR
+{
+  0%   {transform: rotate(0deg);}
+  50%  {transform: rotate(-70deg);}
+  100%   {transform: rotate(0deg);}
+}
+.pironBg{
+  background: #9CA8B6;
+}
+.dooronBg{
+  background: #61EA68;
+}
+/* .ispri{
+  height: 492rpx;
+}
+.ispri .detailsImg{
+  width:492rpx;
+  height: 492rpx;
+}
+.ispri .man-top{
+  height: 492rpx;
+} */
+.switch-dotleft {
+  height: 44.8rrpx;
+  width: 44.8rrpx;
+  border-radius: 100%;
+  position: absolute;
+  background: #fff;
+  top: 5.1rpx;
+  left: 4.4rpx;
+}
+.switch-dotright {
+  top: 5.1rpx;
+  left: 55rpx;
+}
+.linebg{
+  left: 8rpx;
+}
+.linebg2{
+  left: -8rpx;
+}
+.moudel-view{
+  width: 95%;
+  margin: 0 auto;
+}
+.air-set-item{
+  position: relative;
+}
+.picker{
+  height: 100rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.top-icon{
+  width: 100%;
+  margin: 0 auto;
+  height: 160rpx;
+  position:absolute;
+  bottom:0;
+  z-index:3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-left:130rpx;
+  padding-right: 130rpx;
+  box-sizing: border-box; 
+
+}
+.icon-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20rpx;
+}
+.icon-temperature{
+  width: 21rpx;
+  height: 38rpx;
+}
+.icon-flow{
+  width: 34rpx;
+  height: 38rpx;
+}
+.icon-cool{
+  width: 38rpx;
+  height: 38rpx;
+}
+.icon-demoisture{
+  width: 30rpx;
+  height: 38rpx;
+}
+.icon-mode-flow{
+  width: 48rpx;
+  height: 38rpx;
+}
+.icon-hot{
+  width: 38rpx;
+  height: 38rpx;
+}
+.item-top{
+  color: #fff;
+  margin-left:14rpx;
+  line-height: 35rpx;
+  font-size: 35rpx;
+}
+.icon-power{
+  height: 42rpx;
+  width: 28rpx;
+}
+.two-holes{
+  height: 48rpx;
+  width: 48rpx;
+}
+.electricity{
+  width: 55.8rpx;
+  height: 25rpx;
+  border: 2px solid #fff;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+  padding: 4rpx;
+}
+.icon-electricity{
+  width: 0;
+  height: 0;
+  display: none;
+}
+.air-tem{
+  position:absolute;
+  top:180rpx;
+  color:#fff;
+  left:50%;
+  width:100%;
+  margin-left:-50%;
+  text-align:center;
+  font-size:28rpx;
+}

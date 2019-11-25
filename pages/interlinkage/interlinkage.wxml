@@ -1,0 +1,8 @@
+<!--pages/interlinkage/interlinkage.wxml-->
+<!-- <web-view src="https://www.xiaoyan.io/blog"></web-view> -->
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <web-view bindload='btn' src="{{src}}"></web-view>
+     <!-- <web-view bindload='btn' src="https://www.xiaoyan.io/blog/posts/home_center_release_history/#v2-4-19"></web-view> -->
+  </view>
+</view>

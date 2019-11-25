@@ -1,0 +1,44 @@
+<scroll-view class='popup-win page-bottom conniter' scroll-y>
+  <view class='commonzhezhao' wx:if="{{getmsg == false}}"></view>
+  <view class="{{index == 0 ? 'list-homecenterB':''}} list-homecenter" wx:for='{{innerText}}' wx:key='i'>
+    <view class='boxselect' bindtap='{{item.types == 3 && item.online == true  ? "_boxSelect" : ""}}' data-select="{{index}}" data-roster="{{innerText}}" data-boxid='{{item.uuid}}'>
+      <image src='{{index == catalogSelect ? "../../imgs/home_center_selected.png":"../../imgs/home_center_unselected.png"}}' class='homencenter-pic'></image>
+      <image wx:if='{{item.online}}' src='../../imgs/home_center_icon_online.png' class='iconOnline'></image>
+      <image wx:if='{{item.online == false}}' src='../../imgs/home_center_icon_offline.png' class='iconOnline'></image>
+      <image wx:if='{{item.online == undefined || item.online == null}}' src='../../imgs/home_center_icon_waiting.png' class='iconOnline'></image>
+      <view class='hz-all'>
+        <text class='hz-name' style='{{index == 0 ? "color:#fff":""}}'>{{item.name}}
+        </text>
+        <text class='hz-state' wx:if='{{item.online}}' style='{{index == 0 ? "color:#fff":""}}'>在线</text>
+        <text class='hz-state' wx:if='{{item.online == false}}' style='{{index == 0 ? "color:#fff":""}}'>离线</text>
+        <text class='hz-state' wx:if='{{(item.online == undefined || item.online == null)&&  item.types == 2}}' style='{{index == 0 ? "color:#fff":""}}'>设备授权中...</text>
+      </view>
+    </view>
+
+    <navigator class='navigator-right' hover-class="none"  url='../boxDetail/boxDetail?types={{item.types}}&boxuuid={{item.uuid}}&boxname={{item.name}}'>
+      <image src='{{index == 0 ? "../../imgs/home_center_setting_check.png":"../../imgs/home_center_setting_uncheck.png"}}' class='icon-next'></image>
+    </navigator>
+     <view class='dot' wx:if="{{item.EntityFirmware}}"></view>
+  </view>
+
+  <navigator url='../addRoster/addRoster' hover-class="none">
+    <view class='list-homecenter'>
+      <image class='homencenter-pic' src='../../imgs/add_new_home_center.png'></image>
+      <text class='addroster'>添加家庭中心</text>
+      <image src='../../imgs/icon_nexts.png' class='icon-next nextpage'></image>
+    </view>
+  </navigator>
+
+  <!-- </navigator> -->
+  <view wx:if='{{userBox}}'>
+    <text class='messagearrived-bt'>家庭中心消息</text>
+    <!-- <navigator url='../invitation/invitation'> -->
+    <view bindtap='goInvitation' class='addHomecenter' wx:for='{{userBox}}' wx:key='i' data-deviceuuid='{{item}}'>
+      <image src='../../imgs/person.png' class='preson'></image>
+      <view class='addDetail'>{{item.ByDisplayName}}请求加入家庭中心{{item.DeviceName}}</view>
+      <image src='../../imgs/icon_nexts.png' class='icon-next msgNext'></image>
+    </view>
+    <!-- </navigator> -->
+  </view>
+</scroll-view>
+<slot></slot>

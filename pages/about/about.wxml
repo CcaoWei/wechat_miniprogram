@@ -1,0 +1,8 @@
+<view class='about-connect conniter'>
+  <image src='../../imgs/icon_xiaoyan.png' class='about-logo'></image>
+  <text class='xy-title'>小燕在家</text>
+  <text class='xy-wel'>改变一点点，就改变了许多</text>
+  <text class='xy-version'>1.3.10</text>
+  <text class='xy-gflink'>使用条款和隐私政策</text>
+  <text class='xy-ver'>小燕科技版权所有</text>
+</view>

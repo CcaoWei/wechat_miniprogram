@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "common": "../common/common",
+    "tabbar": "../tabbar/tabbar",
+    "mine": "../minePage/minePage",
+    "device":"../device/device"
+  },
+"disableScroll": true
+}

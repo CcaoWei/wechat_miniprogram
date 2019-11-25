@@ -1,0 +1,23 @@
+<!--pages/curtainType/curtainType.wxml-->
+<import src="../../utils/showToast/showToast.wxml" />
+<view class='curtain-type'>
+  <template is="showToast" data="{{showToast: showToast}}" />
+  <view class='choose-type'>请选择窗帘的类型</view>
+  <view class='type-a {{typesA ? "types-bg" : ""}}' bindtap='chooseType' data-types='a'>
+    <image class='curtain-icon-among' src='../../imgs/curtainLeft.png'></image>
+    <view class='curtain-text'>左侧窗帘</view>
+    <image class='select-icon' wx:if="{{typesA}}" src='../../imgs/select_icon.png'></image>
+  </view>
+  <view class='type-b {{typesB ? "types-bg" : ""}}' bindtap='chooseType' data-types='b'>
+    <image class='curtain-icon-among' src='../../imgs/curtainRight.png'></image>
+    <view class='curtain-text'>右侧窗帘</view>
+    <image class='select-icon' wx:if="{{typesB}}" src='../../imgs/select_icon.png'></image>
+  </view>
+  <view class='type-c {{typesC ? "types-bg" : ""}}' bindtap='chooseType' data-types='c'>
+    <image class='curtain-icon-double' src='../../imgs/doubleOpen.png'></image>
+    <view class='curtain-text'>双开窗帘</view>
+    <image class='select-icon' wx:if="{{typesC}}" src='../../imgs/select_icon.png'></image>
+  </view>
+  <view class='next-btn' wx:if="{{curtainBtn == 'details'}}" bindtap="curtainOk">完成</view>
+  <view class='next-btn' wx:if="{{curtainBtn == 'addDevice'}}" bindtap="curtainWay">下一步</view>
+</view>

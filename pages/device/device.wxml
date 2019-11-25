@@ -1,0 +1,192 @@
+<!-- <view class="mine" bindtouchmove="tap_drag"> -->
+<view class='indexnav-out'>
+  <view class='indexxy-nav'>
+    <view class='xy-menu' bindtap="tap_ch">
+      <view class='line'></view>
+      <view class='line'></view>
+      <view class='line'></view>
+    </view>
+    <text class='message-empty' wx:if="{{noDevice != true}}" bindtap='addDevicePage'>添加设备</text>
+    <text class='little-dot' wx:if="{{isnewDevice == true && noDevice != true}}"></text>
+  </view>
+</view>
+<view class='off-line' wx:if="{{onLines != false && onLines != 'false'}}">
+  <image src='../../imgs/icon_warning.png' class='offimg'></image>
+  <view class='offbt'>{{onLines}}</view>
+</view>
+<view wx:if='{{addHomecenter}}' class='add-homecenter'>
+  <view bindtap='goInvitation' class='addHomecenter device-addHomecenter' wx:for='{{addHomecenter}}' wx:key='i' data-deviceuuid='{{item}}' wx:if="{{index == 0}}">
+    <image src='../../imgs/icon_info.png' class='preson'></image>
+    <view class='addDetail'>{{item.ByDisplayName}}请求加入家庭中心{{item.DeviceName}}</view>
+    <image src='../../imgs/icon_next.png' class='icon-next msgNext'></image>
+  </view>
+</view>
+<scroll-view class='xy-room' scroll-with-animation='true' wx:if="{{deviceList && noDevice != true}}" scroll-y>
+   <view wx:for='{{deviceList}}' wx:key='i' class='{{index == deviceList.length-1 ? "last-view" : ""}}'>
+    <view wx:if='{{item.areaDevices.length != 0}}'>
+      <text class='room-name' bindtap='bindAreaNameChange' data-areauuid='{{item.uuid}}'>{{item.name}}</text>
+      <view wx:for="{{item.areaDevices}}" wx:for-item="itemN" wx:for-index="idx" wx:key='i'>
+        <view class='room-device'>
+          <view class='detailUrl' data-uuid='{{itemN.device.uuid}}' data-detailim='{{itemN.parent}}'   bindtap="details">
+            <view class='imgview' wx:if="{{itemN.deviceImg == undefined && itemN.device.Available == true}}">
+              <image src='../../imgs/dooronimg.png' class='dothide {{itemN.doorimg== true ? "dotshow" : ""}}' animation="{{itemN.animationdot}}"></image>
+              <view class='lefticon {{itemN.variable== true ? "animationColor" : ""}} {{itemN.variableEnd == true ? "ultimatelyBorderOn" : ""}} {{itemN.variable == false ? "animationColor2" : ""}} {{itemN.variableEnd== false ? "ultimatelyBorderOn2" : ""}}' animation="{{itemN.animationleft}}"></view>
+              <view class='righticon {{itemN.variable== true ? "animationColor" : ""}} {{itemN.variableEnd == true ? "ultimatelyBorderOn" : ""}} {{itemN.variable == false ? "animationColor2" : ""}} {{itemN.variableEnd== false ? "ultimatelyBorderOn2" : ""}}' animation="{{itemN.animationright}}"></view>
+            </view>
+            <view class='imgview' wx:if="{{itemN.deviceImg == undefined && itemN.device.Available == false}}">
+              <view class='lefticon {{itemN.variableoffline == true ? "ultimatelyBorderOnOffline" : ""}}' animation="{{itemN.animationleft}}"></view>
+              <view class='righticon {{itemN.variableoffline == true ? "ultimatelyBorderOnOffline" : ""}}' animation="{{itemN.animationright}}"></view>
+            </view>
+
+            <image wx:if="{{itemN.deviceImg != undefined}}" src="{{itemN.deviceImg}}" class='room-pic'></image>
+            <image wx:if="{{itemN.detectionLeft == true}}" src='../../imgs/dot.png' class='dotl'></image>
+            <image wx:if="{{itemN.detectionRight == true}}" src='../../imgs/dot.png' class='dotr'></image>
+            <text class='roomDevice-name'>{{itemN.device.name||itemN.uiUuid || itemN.device.uiname}}</text>
+
+          </view>
+          <view bindtap='details' data-uuid='{{itemN.device.uuid}}' data-detailim='{{itemN.parent}}' class='next-box' wx:if="{{itemN.device.model || itemN.device.profile == 7  || itemN.device.profile == 10}}">
+            <image src='../../imgs/icon_nexts.png' class='icon-next nextpage'></image>
+          </view>
+
+          <!-- 灯座和插座 -->
+          <view class='switch-btn-new switch-btn {{itemN.switchEnable ? " " : "switch-btnbg"}}' wx:if='{{itemN.device.Available &&(itemN.device.profile == 1 || itemN.device.profile == 2)}}'>
+            <view class='btn-dot' wx:if="{{itemN.switchEnable == false}}">
+              <!-- 这个里面是点点 -->
+              <view class='allline' wx:if="{{itemN.device.load == true}}">
+
+                <view class='linebg {{itemN.switchEnable ? "linebg2" : ""}}' wx:if="{{itemN.device.load == true}}">
+                  <view class='line-all line1'></view>
+                  <view class='line-all line2'></view>
+                  <view class='line-all line3'></view>
+                  <view class='line-all line4'></view>
+                  <view class='line-all line5'></view>
+                  <view class='line-all line6'></view>
+                  <view class='line-all line7'></view>
+                  <view class='line-all line8'></view>
+                </view>
+              </view>
+            </view>
+            <text class='btn-text' wx:if="{{itemN.switchEnable == false}}"></text>
+            <text class='btn-text' wx:if="{{itemN.switchEnable == true}}"></text>
+            <view class='btn-dot' wx:if="{{itemN.switchEnable == true}}">
+              <!-- 这个里面是点点 -->
+              <view class='allline' wx:if="{{itemN.device.load == true}}">
+
+                <view class='linebg {{itemN.switchEnable ? "linebg2" : ""}}' wx:if="{{itemN.device.load == true}}">
+                  <view class='line-all line1'></view>
+                  <view class='line-all line2'></view>
+                  <view class='line-all line3'></view>
+                  <view class='line-all line4'></view>
+                  <view class='line-all line5'></view>
+                  <view class='line-all line6'></view>
+                  <view class='line-all line7'></view>
+                  <view class='line-all line8'></view>
+                </view>
+              </view>
+            </view>
+            <view class='bind-view' data-switchenable='{{!itemN.switchEnable}}' data-profile='{{itemN.device.profile}}' data-uuid='{{itemN.device.uuid}}' bindtap='switchtap' data-parentuuid="{{itemN.parent}}" data-area='{{index}}' data-device='{{idx}}'></view>
+          </view>
+          <!-- 窗帘的 -->
+          <view class='switch-btn-new switch-btn-cur {{itemN.switchEnable ? " " : "switch-btnbg"}}' wx:if='{{itemN.device.Available &&itemN.device.profile == 5}}'>
+            <view class='btn-dot' wx:if="{{itemN.switchEnable == false}}">
+              <!-- 这个里面是点点 -->
+              <view class='allline' wx:if="{{itemN.device.load == true}}">
+
+                <view class='linebg {{itemN.switchEnable ? "linebg2" : ""}}' wx:if="{{itemN.device.load == true}}">
+                  <view class='line-all line1'></view>
+                  <view class='line-all line2'></view>
+                  <view class='line-all line3'></view>
+                  <view class='line-all line4'></view>
+                  <view class='line-all line5'></view>
+                  <view class='line-all line6'></view>
+                  <view class='line-all line7'></view>
+                  <view class='line-all line8'></view>
+                </view>
+              </view>
+            </view>
+            <text class='btn-text' wx:if="{{itemN.switchEnable == false}}"></text>
+            <text class='btn-text' wx:if="{{itemN.switchEnable == true}}"></text>
+            <view class='btn-dot' wx:if="{{itemN.switchEnable == true}}">
+              <!-- 这个里面是点点 -->
+              <view class='allline' wx:if="{{itemN.device.load == true}}">
+
+                <view class='linebg {{itemN.switchEnable ? "linebg2" : ""}}' wx:if="{{itemN.device.load == true}}">
+                  <view class='line-all line1'></view>
+                  <view class='line-all line2'></view>
+                  <view class='line-all line3'></view>
+                  <view class='line-all line4'></view>
+                  <view class='line-all line5'></view>
+                  <view class='line-all line6'></view>
+                  <view class='line-all line7'></view>
+                  <view class='line-all line8'></view>
+                </view>
+              </view>
+            </view>
+            <view class='bind-view' data-switchenable='{{!itemN.switchEnable}}' data-profile='{{itemN.device.profile}}' data-uuid='{{itemN.device.uuid}}' bindtap='switchtap' data-parentuuid="{{itemN.parent}}" data-area='{{index}}' data-device='{{idx}}'></view>
+          </view>
+          <!-- 门磁和pir的 -->
+          <view class='switch-btn-new {{itemN.switchEnable ? " " : "switch-btnbg"}}' wx:if='{{itemN.device.Available && (itemN.device.profile == 0 || itemN.device.profile == 3)}}'>
+            <view class='btn-dot' wx:if="{{itemN.switchEnable == false}}">
+              <!-- 这个里面是点点 -->
+              <view class='allline' wx:if="{{itemN.device.load == true}}">
+
+                <view class='linebg {{itemN.switchEnable ? "linebg2" : ""}}' wx:if="{{itemN.device.load == true}}">
+                  <view class='line-all line1'></view>
+                  <view class='line-all line2'></view>
+                  <view class='line-all line3'></view>
+                  <view class='line-all line4'></view>
+                  <view class='line-all line5'></view>
+                  <view class='line-all line6'></view>
+                  <view class='line-all line7'></view>
+                  <view class='line-all line8'></view>
+                </view>
+              </view>
+            </view>
+            <text class='btn-text' wx:if="{{itemN.switchEnable == false}}">撤防</text>
+            <text class='btn-text' wx:if="{{itemN.switchEnable == true}}">布防</text>
+            <view class='btn-dot' wx:if="{{itemN.switchEnable == true}}">
+              <!-- 这个里面是点点 -->
+              <view class='allline' wx:if="{{itemN.device.load == true}}">
+
+                <view class='linebg {{itemN.switchEnable ? "linebg2" : ""}}' wx:if="{{itemN.device.load == true}}">
+                  <view class='line-all line1'></view>
+                  <view class='line-all line2'></view>
+                  <view class='line-all line3'></view>
+                  <view class='line-all line4'></view>
+                  <view class='line-all line5'></view>
+                  <view class='line-all line6'></view>
+                  <view class='line-all line7'></view>
+                  <view class='line-all line8'></view>
+                </view>
+              </view>
+            </view>
+            <view class='bind-view' data-switchenable='{{!itemN.switchEnable}}' data-profile='{{itemN.device.profile}}' data-uuid='{{itemN.device.uuid}}' bindtap='switchtap' data-parentuuid="{{itemN.parent}}" data-area='{{index}}' data-device='{{idx}}'></view>
+          </view>
+
+          <!-- 不在线设备禁用 -->
+          <view class='device-btns' wx:if="{{!itemN.device.Available && !itemN.device.model && itemN.device.profile != 7  && itemN.device.profile != 10}}">
+            <image class='offlineimg' src='../../imgs/icon_offline.png'></image>
+            <text class='offline'>离线</text>
+          </view>
+        </view>
+        <!-- </view> -->
+      </view>
+    </view>
+  </view>
+
+</scroll-view>
+<view class='no-device' wx:if="{{noDevice == true}}">
+  <text class='indicate'>添加灯座、插座、墙壁开关、智能窗帘、各种传感器和其他设备。</text>
+  <view class='reminder-btn' bindtap='addDevicePage'>添加设备</view>
+  <view class='reminder-text'>去看看有哪些设备></view>
+</view>
+<view class='zhezhao {{changeAreaname ? "block":""}}'></view>
+<view class='change-areaname {{changeAreaname ? "block":""}}'>
+  <input type='text' class='areaname-input' placeholder='请输入名称' placeholder-class='areaname-placeholder' bindinput='bindAreanameInput'></input>
+  <view class='submit-all'>
+    <view class='areaname-submit' bindtap='bindAreanameConfirm'>确定</view>
+    <view class='areaname-submit cancel-btn' bindtap='bindAreanameCancel'>取消</view>
+  </view>
+
+</view>
+<slot></slot>

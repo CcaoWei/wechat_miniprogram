@@ -1,0 +1,12 @@
+<view class='conniter'>
+  <view class='saveBtn'>
+    <view class='save-box'  bindtap='save'>
+      <image src='../../imgs/save.png' class='save'></image>
+    </view>
+  </view>
+
+ <view class='compileName'>
+    <input class="rename" style='color:#2D3B46' value='{{deviceLog.device.name || deviceLog.uiname}}' placeholder='{{deviceLog.device.name || deviceLog.uiname}}' bindinput="bindKeyInput" ></input>
+    <image src='../../imgs/scene_rename.png' class='sceneNameicon'></image>
+  </view>
+</view>

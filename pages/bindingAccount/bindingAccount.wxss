@@ -1,0 +1,97 @@
+/* pages/bindingAccount/bindingAccount.wxss */
+.bindAll{
+  height: 100vh;
+  width: 100%;
+}
+.bindAccount{
+  height: 160rpx;
+  width: 93%;
+  border-bottom: 2rpx solid #cbcbcb;
+  margin: 0 auto;
+  position: relative;
+}
+.bindicon{
+  height: 75rpx;
+  width: 75rpx;
+  margin: 42rpx 30rpx 0 0;
+  display: block;
+  float: left;
+}
+.bindtext{
+  opacity: 0.73;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #2D3B46;
+  float: left;
+  width: 79%;
+}
+.bind-account{
+  opacity: 0.73;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #2D3B46;
+  float: left;
+  width: 79%;
+}
+.check-view{
+  width: 79%;
+  height: 112rpx;
+  float: left;
+}
+.ismessage{
+  opacity: 0.73;
+  font-family: PingFangSC-Regular;
+  font-size: 21rpx;
+  color: #2D3B46;
+  float: left;
+}
+.check-box{
+  float: left;
+  margin-right: 9rpx;
+  zoom: 43%;
+  display: block;
+  margin-left: 6rpx;
+  margin-top: 5rpx;
+}
+.weixinon{
+  margin-top: 20rpx;
+}
+.weixinoff,.bindoff{
+  margin-top: 58rpx;
+}
+.bindon{
+  margin-top: 20rpx;
+}
+.bindcheck{
+  border: 2rpx solid #979797;
+  border-radius: 200rpx;
+  position: absolute;
+  height: 46rpx;
+  width: 152rpx;
+  opacity: 0.6;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #2D3B46;
+  top: 57rpx;
+  right: 0;
+  text-align: center;
+  line-height: 46rpx;
+}
+.gainCode{
+  color: #6fadde;
+  font-size: 24rpx;
+}
+.bindonoff{
+  margin-top: 20rpx;
+}
+.checkbox-all{
+  width: 79%;
+  height: 46rpx;
+  float: left;
+}
+.check-label{
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative;
+}

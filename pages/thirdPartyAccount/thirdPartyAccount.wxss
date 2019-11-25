@@ -1,0 +1,88 @@
+/* pages/phoneAccount/phoneAccount.wxss */
+.phoneaccount{
+  height: 262rpx;
+  width: 93%;
+  position: relative;
+  margin: 0 auto;
+}
+.input-css{
+  height: 120rpx;
+  width: 100%;
+  border-bottom: 2rpx solid #cbcbcb;
+
+}
+.number-input{
+  padding-left:10rpx;
+  height: 120rpx;
+  width: 80%;
+  font-size: 32rpx;
+  display: block;
+}
+.email-input{
+  padding-left:10rpx;
+  height: 120rpx;
+  width: 100%;
+   display: block;
+   border-bottom: 3rpx solid #ccc;
+   font-size: 32rpx;
+}
+.code-all{
+  height: 106rpx;
+  width: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 232;
+  padding-top: 32rpx;
+}
+.codebtn{
+  height: 56rpx;
+  width: 198rpx;
+  border-radius: 30rpx;
+  border:  2rpx solid #eee;
+  font-size: 28rpx;
+  text-align: center;
+  color: #dbd9d9;
+  line-height: 56rpx;
+}
+.codebtn-color{
+  color: #333
+}
+.close-val{
+  height: 35rpx;
+  width: 35rpx;
+  position: absolute;
+  top: 44rpx;
+  right: 214rpx;
+  display: block;
+  z-index: 3;
+}
+.close-code{
+  height: 35rpx;
+  width: 35rpx;
+  position: absolute;
+  bottom: 50rpx;
+  right: 0;
+  display: block;
+  z-index: 3;
+}
+.submitBtn{
+  height: 90rpx;
+  width: 416.7rpx;
+  margin: 224rpx auto;
+  border:  2rpx solid #ccc8c8;
+  border-radius: 60rpx;
+  color: #ccc8c8;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+.submitBtn-color{
+   color: #666;
+}
+.emailaccount{
+  height: 128rpx;
+  width: 93%;
+  margin: 0 auto;
+  position: relative;
+}

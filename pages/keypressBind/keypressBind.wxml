@@ -1,0 +1,28 @@
+<view class='continer'>
+<view class='binding'>
+  <view class='bindingDetail' bindtap='keyType'>
+      <image src='{{keypressBind.keypressImg}}' class='alarm'></image>
+      <view class='inform'>
+        <text class='informBt'>单击按键</text>
+        <text class='informText'>轻轻一按，全部搞定</text>
+      </view>
+    <view class='icon-nextBind'>
+      <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </view>
+
+
+  <view class='bindingDetail' bindtap='keyType' data-doublebind='true'>
+      <image src='{{keypressBind.keypressImg}}' class='alarm'></image>
+      <view class='inform'>
+        <text class='informBt'>双击按键</text>
+        <text class='informText'>快速双击，控制设备</text>
+      </view>
+    <view  class='icon-nextBind'>
+      <image class="icon-next" src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </view>
+
+
+</view>
+</view>

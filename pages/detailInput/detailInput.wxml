@@ -1,0 +1,289 @@
+<!--pages/detailInput/detailInput.wxml-->
+<view class='settings' wx:if="{{switchModuleInputMode}}">开关类型设置</view>
+<view class='room-device' wx:if="{{switchModuleInputMode}}">
+  <view class='detailUrl'>
+    <image class='room-pic' src="{{switchModuleInputMode.deviceimg}}"></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{switchModuleInputMode.statusBt}}</view>
+      <view class='ledtext'>{{switchModuleInputMode.statusText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{switchModuleInputMode.mode ? " " : "switch-btnbg"}}'>
+    <view class='btn-dot' wx:if="{{switchModuleInputMode.mode == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{switchModuleInputMode.load == true}}">
+
+        <view class='linebg {{switchModuleInputMode.mode ? "linebg2" : ""}}' wx:if="{{switchModuleInputMode.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{switchModuleInputMode.mode == false}}"></text>
+    <text class='btn-text' wx:if="{{switchModuleInputMode.mode == true}}"></text>
+    <view class='btn-dot' wx:if="{{switchModuleInputMode.mode == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{switchModuleInputMode.load == true}}">
+
+        <view class='linebg {{switchModuleInputMode.mode ? "linebg2" : ""}}' wx:if="{{switchModuleInputMode.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{switchModuleInputMode.uuid}}' data-enable="{{!switchModuleInputMode.mode}}" data-type="switchModuleInputMode"></view>
+  </view>
+
+</view>
+<view class='room-device' wx:if="{{switchModulePolarity}}">
+  <view class='detailUrl'>
+    <image class='room-pic' src="{{switchModulePolarity.deviceimg}}"></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{switchModulePolarity.statusBt}}</view>
+      <view class='ledtext'>{{switchModulePolarity.statusText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{switchModulePolarity.mode ? " " : "switch-btnbg"}}'>
+    <view class='btn-dot' wx:if="{{switchModulePolarity.mode == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{switchModulePolarity.load == true}}">
+
+        <view class='linebg {{switchModulePolarity.mode ? "linebg2" : ""}}' wx:if="{{switchModulePolarity.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{switchModulePolarity.mode == false}}"></text>
+    <text class='btn-text' wx:if="{{switchModulePolarity.mode == true}}"></text>
+    <view class='btn-dot' wx:if="{{switchModulePolarity.mode == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{switchModulePolarity.load == true}}">
+
+        <view class='linebg {{switchModulePolarity.mode ? "linebg2" : ""}}' wx:if="{{switchModulePolarity.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{switchModulePolarity.uuid}}' data-enable="{{!switchModulePolarity.mode}}" data-type="switchModulePolarity"></view>
+  </view>
+
+</view>
+
+<view class='settings' wx:if="{{programmableInput}}">可编程开关</view>
+<view class='room-device' wx:if="{{programmableInput}}">
+  <view class='detailUrl'>
+    <image class='room-pic' src="{{programmableInput.deviceimg}}"></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{programmableInput.statusBt}}</view>
+      <view class='ledtext'>{{programmableInput.statusText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{programmableInput.mode ? " " : "switch-btnbg"}}'>
+    <view class='btn-dot' wx:if="{{programmableInput.mode == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{programmableInput.load == true}}">
+
+        <view class='linebg {{programmableInput.mode ? "linebg2" : ""}}' wx:if="{{programmableInput.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{programmableInput.mode == false}}"></text>
+    <text class='btn-text' wx:if="{{programmableInput.mode == true}}"></text>
+    <view class='btn-dot' wx:if="{{programmableInput.mode == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{programmableInput.load == true}}">
+
+        <view class='linebg {{programmableInput.mode ? "linebg2" : ""}}' wx:if="{{programmableInput.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{programmableInput.uuid}}' data-enable="{{!programmableInput.mode}}" data-type="programmableInput" ></view>
+  </view>
+
+</view>
+<view class='room-device' wx:if="{{relayEnable}}">
+  <view class='detailUrl'>
+    <image class='room-pic' src="{{relayEnable.deviceimg}}"></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{relayEnable.statusBt}}</view>
+      <view class='ledtext'>{{relayEnable.statusText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{relayEnable.mode ? " " : "switch-btnbg"}}'>
+    <view class='btn-dot' wx:if="{{relayEnable.mode == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{relayEnable.load == true}}">
+
+        <view class='linebg {{relayEnable.mode ? "linebg2" : ""}}' wx:if="{{relayEnable.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{relayEnable.mode == false}}"></text>
+    <text class='btn-text' wx:if="{{relayEnable.mode == true}}"></text>
+    <view class='btn-dot' wx:if="{{relayEnable.mode == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{relayEnable.load == true}}">
+
+        <view class='linebg {{relayEnable.mode ? "linebg2" : ""}}' wx:if="{{relayEnable.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{relayEnable.uuid}}' data-enable="{{!relayEnable.mode}}" data-type="relayEnable"></view>
+  </view>
+
+</view>
+
+<view class='room-device' wx:if="{{relayAlwaysOn}}">
+  <view class='detailUrl'>
+    <image class='room-pic' src="{{relayAlwaysOn.deviceimg}}"></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{relayAlwaysOn.statusBt}}</view>
+      <view class='ledtext'>{{relayAlwaysOn.statusText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{relayAlwaysOn.mode ? " " : "switch-btnbg"}}'>
+    <view class='btn-dot' wx:if="{{relayAlwaysOn.mode == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{relayAlwaysOn.load == true}}">
+
+        <view class='linebg {{relayAlwaysOn.mode ? "linebg2" : ""}}' wx:if="{{relayAlwaysOn.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{relayAlwaysOn.mode == false}}"></text>
+    <text class='btn-text' wx:if="{{relayAlwaysOn.mode == true}}"></text>
+    <view class='btn-dot' wx:if="{{relayAlwaysOn.mode == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{relayAlwaysOn.load == true}}">
+
+        <view class='linebg {{relayAlwaysOn.mode ? "linebg2" : ""}}' wx:if="{{relayAlwaysOn.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{relayAlwaysOn.uuid}}' data-enable="{{!relayAlwaysOn.mode}}" data-type="relayAlwaysOn"></view>
+  </view>
+
+</view>
+
+<view class='settings' wx:if="{{ledFeedbackState}}">LED 反馈</view>
+<view class='room-device' wx:if="{{ledFeedbackState}}">
+  <view class='detailUrl'>
+    <image class='room-pic' src="{{ledFeedbackState.deviceimg}}"></image>
+    <view class='roomDevice-name'>
+      <view class='ledbt'>{{ledFeedbackState.statusBt}}</view>
+      <view class='ledtext'>{{ledFeedbackState.statusText}}</view>
+    </view>
+  </view>
+  <view class='switch-btn-new switch-btn {{ledFeedbackState.mode ? " " : "switch-btnbg"}}'>
+    <view class='btn-dot' wx:if="{{ledFeedbackState.mode == false}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{ledFeedbackState.load == true}}">
+
+        <view class='linebg {{ledFeedbackState.mode ? "linebg2" : ""}}' wx:if="{{ledFeedbackState.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <text class='btn-text' wx:if="{{ledFeedbackState.mode == false}}"></text>
+    <text class='btn-text' wx:if="{{ledFeedbackState.mode == true}}"></text>
+    <view class='btn-dot' wx:if="{{ledFeedbackState.mode == true}}">
+      <!-- 这个里面是点点 -->
+      <view class='allline' wx:if="{{ledFeedbackState.load == true}}">
+
+        <view class='linebg {{ledFeedbackState.mode ? "linebg2" : ""}}' wx:if="{{ledFeedbackState.load == true}}">
+          <view class='line-all line1'></view>
+          <view class='line-all line2'></view>
+          <view class='line-all line3'></view>
+          <view class='line-all line4'></view>
+          <view class='line-all line5'></view>
+          <view class='line-all line6'></view>
+          <view class='line-all line7'></view>
+          <view class='line-all line8'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bind-view' bindtap='switchtap' data-uuid='{{ledFeedbackState.uuid}}' data-enable="{{!ledFeedbackState.mode}}" data-type="ledFeedbackState"></view>
+  </view>
+
+</view>

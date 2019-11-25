@@ -1,0 +1,11 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<view class="send-code">
+  <template is="showToast" data="{{showToast: showToast}}" />
+  <view class='message-hint'>
+    <view>为了您的账户安全，请重置您的小燕账户密码。</view>
+    我们将通过以下方式向您发送验证码，验证码用来重置您的小燕账户密码。
+  </view>
+  <view class='sendcode-btn'  data-types='mobile'  bindtap='getCode'>手机获取验证码</view>
+  <view class='sendcode-btn' data-types='email'  bindtap='getCode'>邮箱获取验证码</view>
+  <view class='no-bind'>没有绑定手机或邮箱？<text class='now-bind' bindtap='nowBind'>现在绑定{{'<<'}}</text></view>
+</view>

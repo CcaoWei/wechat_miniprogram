@@ -1,0 +1,114 @@
+.my-content{
+  background: #fff;
+  width: 100%;
+  height: 100%;
+}
+.my-contentbg{
+  height: 100%;
+}
+.buddha-information{
+  position: relative;
+  height: 286rpx;
+   background: #fff;
+   min-width: 375rpx;
+   width: 100%;
+}
+.touxiangbg{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 324rpx;
+  width: 100%;
+  z-index: 1;
+}
+.my-buddha{
+  height: 127rpx;
+  width: 127rpx;
+  display:block;
+  border-radius:100%;
+  margin:0 auto;
+  position: absolute;
+  top: -32.4rpx;
+  left:50%;
+  margin-left: -63.5rpx;
+  z-index: 999;
+}
+.xy-name{
+  width: 100%;
+  height:  50rpx;
+  line-height:  50rpx;
+  text-align: center;
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 35rpx;
+  color: #000000;
+  position: absolute;
+  top: 118rpx;
+}
+.xy-address{
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #141414;
+  text-align: center;
+  display: block;
+  margin-top: 10rpx;
+}
+.my-item{
+  height: 120rpx;
+  width:95%;
+  border-bottom: 2rpx solid #cbcbcb;
+  margin: 0 auto;
+  background:#fff;
+  line-height: 120rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #969da2;
+}
+.next-icon{
+  width: 13rpx;
+  height: 21rpx;
+  margin: 62rpx 0 0 0;
+  float: right;
+}
+.link-url{
+  display: none
+}
+.xy-navs{
+  height: 102rpx;
+  width: 100%;
+}
+.xy-menu{
+  /* height: rpx; */
+  width: 69.4rx;
+  float: left;
+  padding: 50rpx 0 0 30rpx;
+  position: fixed;
+  z-index: 333;
+  height: 70rpx;
+}
+.line {
+  width:34.7rpx;
+  height:5rpx;
+  background:#979797;
+  margin-top:6rpx;
+}
+
+.zhezhao{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ececec;
+  opacity: 0.4;
+  z-index: 51;
+  display: none;
+}
+.my-logo{
+  height:  50rpx;
+  width: 45rpx;
+  float:right;
+  padding: 32rpx 30rpx 0 80rpx;
+}

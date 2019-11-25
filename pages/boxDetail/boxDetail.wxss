@@ -1,0 +1,121 @@
+/* pages/boxDetail/boxDetail.wxss */
+@import '../../utils/showToast/showToast.wxss';
+.box-detail{
+  height: 442rpx;
+  background: #9ca8b6;
+  padding-top: 52rpx;
+}
+.icon-back{
+  height: 25rpx;
+  width: 15rpx;
+  float: left;
+  margin-left:30rpx;
+  margin-top: 35rpx;
+}
+.homename{
+  color: #fff;
+  margin-left:120rpx;
+}
+.reddots{
+  height: 100%;
+  width: 50rpx;
+  float: right;
+}
+.reddot{
+  height: 25rpx;
+  width: 25rpx;
+  background: #F43530;
+  margin-top: 43rpx;
+  float: right　;
+  border-radius:150rpx;
+  line-height: 160rpx;
+}
+.home_center{
+  height: 370rpx;
+  width: 371rpx;
+  margin: 0 auto;
+  display: block;
+}
+.xy-text{
+  font-family: PingFangSC-Medium;
+  font-size:30rpx;
+  color: #FFFFFF;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: -8rpx;
+}
+.xy-devicename{
+  width: 90%;
+  margin: 0 auto;
+  height:120rpx;
+  border-bottom: 2rpx solid #cccccc;
+}
+.shareBtn{
+  background: #fff;
+  border: 0;
+  padding:0;
+  width:100%;
+  display: block;
+}
+.dn-name{
+  opacity: 0.5;
+  font-family: PingFangSC-Regular;
+  font-size:30rpx;
+  color: rgb(4, 6, 7);
+  float: left;
+  line-height:120rpx;
+}
+.dn-rel{
+  opacity: 0.73;
+  font-family: PingFangSC-Regular;
+  font-size:30rpx;
+  color: #2D3B46;
+  float: right;
+  margin-right: 16rpx;
+  line-height:120rpx;
+}
+.icon-next{
+  height: 26rpx;
+  width: 17rpx;
+  margin: 52rpx 0 0;
+}
+.xy-delete{
+  width: 416rpx;
+  height: 92rpx;
+  background: #ff8443;
+  border-radius:150rpx;
+  color: #fff;
+  font-family: PingFangSC-Regular;
+  font-size:30rpx;
+  line-height:91rpx;
+  margin-top: 270rpx;
+  margin-bottom:80rpx
+}
+.wait{
+  height: 91rpx;
+  width: 416rpx;
+  border:2rpx solid #999;
+  margin: 400rpx auto;
+  line-height: 94rpx;
+  text-align:center;
+  border-radius:150rpx;
+  opacity: 0.73;
+  font-family: PingFangSC-Regular;
+  font-size:30rpx;
+  color: #2D3B46;
+}
+.detail-content{
+  padding-bottom:80rpx;
+}
+button::after{
+  border: none;
+}
+.showwait{
+  width: 100%;
+  font-size:27rpx;
+  text-align:center;
+  color:#bfbbbb;
+  position: absolute;
+  top: 750rpx;
+}

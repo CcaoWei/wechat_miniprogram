@@ -1,0 +1,24 @@
+<import src="../../utils/showToast/showToast.wxml" />
+  <template is="showToast" data="{{showToast: showToast}}" />
+<view class='conniter' wx:if="{{addRoom == false}}">
+  <view class=" saveBtn" bindtap='save'>
+   <image src='../../imgs/save.png' class='save'></image>
+  </view>
+ <view class='compileName'>
+    <input class="rename" style='color:#2D3B46' value='{{dataInformation.name}}' placeholder='{{dataInformation.name}}' bindinput="bindKeyInput" ></input>
+    <image src='../../imgs/scene_rename.png' class='sceneNameicon'></image>
+  </view>
+  <button bindtap='deleteRoom' class='xy-delete' wx:if="{{dataInformation.uuid != 'area-0000'}}">删除</button>
+</view>
+
+<view class='conniter' wx:if="{{addRoom == true}}">
+<view class='saveBtn'>
+  <view class='saveBtn save-box'>
+    <image src='../../imgs/save.png' class='save' bindtap='saveAddRoom'></image>
+  </view>
+</view>
+ <view class='compileName'>
+    <input class="rename" style='color:#2D3B46' value='{{addRoomName}}' placeholder='请输入房间名称' bindinput="bindAddRoom" ></input>
+    <image src='../../imgs/scene_rename.png' class='sceneNameicon'></image>
+  </view>
+</view>

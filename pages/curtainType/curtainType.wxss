@@ -1,0 +1,77 @@
+/* pages/curtainType/curtainType.wxss */
+.curtain-type{
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+   background: #8FD4FB;
+}
+.choose-type{
+  font-family: PingFangSC-Regular;
+  font-size:28rpx;
+  color: #FFFFFF;
+  margin: 65rpx 0 40.8rpx;
+  padding-left: 27rpx;
+}
+.type-a,.type-b{
+  width: 333rpx;
+  height: 344rpx;
+  float: left;
+  margin-left: 28rpx;
+  background: rgba(255,255,255,0.31);
+  border-radius: 20rpx;
+  position: relative
+}
+.curtain-icon-among{
+  height: 233rpx;
+  width: 254rpx;
+  display: block;
+  margin: 26rpx auto 0;
+}
+.curtain-icon-double{
+  height: 232rpx;
+  width: 557rpx;
+  display: block;
+  margin: 27rpx auto 0;
+}
+.type-c{
+  width: 694rpx;
+  height: 344rpx;
+  float: left;
+  margin-left: 28rpx;
+  margin-top: 30rpx;
+  background: rgba(255,255,255,0.31);
+  border-radius: 20rpx;
+  position: relative
+}
+.curtain-text{
+  color: #fff;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size:28rpx;
+  margin-top: 27rpx;
+}
+.next-btn{
+  border: 2rpx solid #fff;
+  border-radius: 300rpx;
+  width: 400rpx;
+  height: 88rpx;
+  float: left;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #fff;
+  margin: 90rpx auto 0;
+  transform: translate(50%,50%);
+  line-height: 88rpx;
+}
+.types-bg{
+  background: #7DC8F4;
+  border-radius: 20rpx;
+}
+.select-icon{
+  height: 44rpx;
+  width: 44rpx;
+  position: absolute;
+  top: 282.6rpx;
+  right: 25rpx;
+}

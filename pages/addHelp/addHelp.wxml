@@ -1,0 +1,46 @@
+<!--pages/addHelp/addHelp.wxml-->
+<view class='addHelp-page'>
+  <text class='choose-text'>选择设备类型</text>
+  <navigator url='../addHelpDetails/addHelpDetails?types=pir' hover-class='none'>
+    <view class='device-item'>
+      <image class='device-img' src='../../imgs/new_device_pir.png'></image>
+      <text class='device-name'>感应开关</text>
+      <image class='icon-next' src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </navigator>
+   <navigator url='../addHelpDetails/addHelpDetails?types=dc' hover-class='none'>
+    <view class='device-item'>
+      <image class='device-img' src='../../imgs/new_device_dc.png'></image>
+      <text class='device-name'>门磁窗传感器</text>
+      <image class='icon-next' src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </navigator>
+   <navigator url='../addHelpDetails/addHelpDetails?types=plug' hover-class='none'>
+    <view class='device-item'>
+      <image class='device-img' src='../../imgs/new_device_plug.png'></image>
+      <text class='device-name'>智能插座</text>
+      <image class='icon-next' src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </navigator>
+  <navigator url='../addHelpDetails/addHelpDetails?types=light' hover-class='none'>
+    <view class='device-item'>
+      <image class='device-img' src='../../imgs/new_device_light.png'></image>
+      <text class='device-name'>智能灯座</text>
+      <image class='icon-next' src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </navigator>
+  <navigator url='../addHelpDetails/addHelpDetails?types=curtain' hover-class='none'>
+    <view class='device-item'>
+      <image class='device-img' src='../../imgs/new_device_curtain.png'></image>
+      <text class='device-name'>智能窗帘</text>
+      <image class='icon-next' src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </navigator>
+  <navigator url='../addHelpDetails/addHelpDetails?types=wallswitch' hover-class='none'>
+    <view class='device-item'>
+      <image class='device-img' src='../../imgs/new_device_wallswitch.png'></image>
+      <text class='device-name'>墙壁开关</text>
+      <image class='icon-next' src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </navigator>
+</view>

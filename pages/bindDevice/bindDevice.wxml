@@ -1,0 +1,60 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<view>
+  <template is="showToast" data="{{showToast: showToast}}" />
+  <view class='animationEffect'>
+    <view class='bindTypeTop'>
+      <image src='{{bindingImage}}' class='animationEffect1'></image>
+      <view class='savebtn {{uiScrollTop ? "savebtnAlpha" : ""}}' bindtap='saveSubmit'>
+        <image wx:if="{{isSave}}"  class='saves' src='../../imgs/save.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<scroll-view class='binding-setting'>
+  <view class='group' wx:for='{{bindingItems}}' wx:for-item='Group' wx:key='i'>
+
+    <text class='group-name'>{{Group.name}}</text>
+    <text class='group-description' wx:if='{{Group.groupIndex == 2}}'>{{Group.description}}</text>
+
+    <view class='binding-areas' wx:for='{{Group.bindingAreas}}' wx:for-item='BindingArea' wx:key='i' wx:if='{{Group.groupIndex == 1}}'>
+      <text class='room-name'>{{BindingArea.area.name}}</text>
+      <view class='binding-item' wx:for='{{BindingArea.items}}' wx:for-item='Item' wx:key='i'>
+        <view class='binding-itemleft' bindtap='bindBindingItemClicked' data-btn='{{!Item.btn}}' data-uuid='{{Item.logicDevice.uuid}}'>
+          <view class='curtainimg-box' wx:if="{{curtain == 'curtain'}}">
+            <image class='{{Item.mode}} curtainSelect' src='{{Item.checkImage}}'></image>
+          </view>
+
+          <image class='device-icon' src='{{Item.deviceImage}}'></image>
+          <text class='device-name'>{{Item.logicDevice.uiname}}</text>
+         
+
+
+        </view>
+        <view class='deviceimg-box' bindtap='bindBindingItemClicked' data-btn='{{!Item.btn}}' data-uuid='{{Item.logicDevice.uuid}}' wx:if="{{curtain != 'curtain'}}">
+            <image class='{{Item.mode}}' src='{{Item.checkImage}}'></image>
+          </view>
+        <!-- <view class='switchButton switch-btn {{ Item.btn == true ? " " : "switch-btnbg"}}' wx:if="{{curtain == 'curtain'}}">
+          <view class='switch-dotleft {{Item.btn == true ? "switch-dotright" : ""}}'>
+          </view>
+          <view class='bind-view' data-uuid='{{Item.logicDevice.uuid}}' bindtap='switchtap' data-btn='{{!Item.btn}}'></view>
+        </view> -->
+        <view class='switch-btn-new switch-btn {{Item.btn ? " " : "switch-btnbg"}}' wx:if="{{curtain == 'curtain'}}">
+            <view class='btn-dot' wx:if="{{Item.btn == false}}"></view>
+            <text class='btn-text' wx:if="{{Item.btn == false}}"></text>
+            <text class='btn-text' wx:if="{{Item.btn == true}}"></text>
+            <view class='btn-dot' wx:if="{{Item.btn == true}}"></view>
+            <view class='bind-view'data-uuid='{{Item.logicDevice.uuid}}' bindtap='switchtap' data-btn='{{!Item.btn}}'></view>
+          </view>
+      </view>
+    </view>
+
+    <view class='setting-item' wx:for='{{Group.items}}' wx:for-item='Item' wx:key='i' wx:if='{{Group.groupIndex == 2}}' bindtap='bindSettingItemClicked' data-para='{{Item.para}}' data-btn='{{!item.btn}}'>
+      <view class='binding-itemleft'>
+        <image class='device-icon' src='{{Item.icon}}' wx:if='{{Group.type == 1}}'></image>
+        <text class='device-name'>{{Item.title}}</text>
+      </view>
+      
+      <view class='deviceimg-box'><image class='{{Item.mode}}' src='{{Item.checkImage}}'></image></view>
+    </view>
+  </view>
+</scroll-view>

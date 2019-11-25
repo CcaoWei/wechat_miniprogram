@@ -1,0 +1,267 @@
+/* 这里的样式只应用于这个自定义组件 */
+/* page,.page {
+  height: auto;
+  min-height:667px;
+  font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+  overflow: hidden;
+} */
+.page-bottom{
+  height: 100%;
+  width: 750rpx;
+  position: absolute;
+  background-color: rgb(0, 68, 97);
+  z-index: 0;
+}
+.wc{
+  color: white;
+  padding: 30rpx 0 30rpx 30rpx;
+}
+.page-content{
+  padding-top: 300rpx;
+}
+.page-top{
+  height: 100%;
+  position: fixed;
+   width: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 0;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+.c-state1{
+  transform: rotate(0deg) scale(1) translate(75%,0%);
+  -webkit-transform: rotate(0deg) scale(1) translate(75%,0%);
+}
+.c-state2{
+  transform: rotate(0deg) scale(.8) translate(75%,0%);
+  -webkit-transform: rotate(0deg) scale(.8) translate(75%,0%);
+}
+.xy-nav{
+  height: 80rpx;
+}
+.xy-menu{
+  height: 40rpx;
+  width: 40rpx;
+  float: left;
+  margin: 30rpx 102rpx 0 30rpx;
+}
+.line{
+  width: 40rpx;
+  height: 4rpx;
+  background: gray;
+  margin-top: 7rpx;
+}
+.popup-win{
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 0 80rpx 20rpx;
+  z-index: 1;
+  background: #fff;
+  top: 0;
+}
+.home-center{
+  font-size: 32rpx;
+  color: #778590;
+}
+.list-homecenter{
+  height: 166.7rpx;
+  width: 600rpx;
+  background: #fafafa;
+  margin-bottom: 10.2rpx;
+  position:relative;
+}
+.list-homecenterB{
+  background: #7CD0FE;
+}
+.homencenter-pic{
+  height: 64.6rpx;
+  width: 64.6rpx;
+  float:left;
+  margin-left: 27rpx;
+  margin-top: 51rpx;
+}
+.hz-all{
+  float: left;
+  /* width: 185px; */
+  width: 288rpx;
+  margin-left: 30rpx;
+  margin-top: 10rpx;
+  height: 90%;
+}
+.hz-name{
+  font-family: PingFangTC-Medium;
+  font-size: 32rpx;
+  color: #55585A;
+  line-height: 32rpx;
+  display: block;
+  margin-top: 40rpx;
+}
+.hz-state{
+  opacity: 0.5;
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #899198;
+  line-height: 28rpx;
+  display: block;
+  margin-top: 12rpx;
+}
+.hz-nameSelect{
+  font-size: 28rpx;
+  line-height: 36rpx;
+  display: block;
+  color: #fff;
+}
+.hz-stateSelect{
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 42rpx;
+}
+.icon-next{
+  float: right;
+  height: 32rpx;
+  width: 33rpx;
+  margin: 67rpx 31rpx 0 0;
+}
+.messagearrived-bt{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #6E869A;
+  line-height: 80rpx;
+}
+.messagearrived-list{
+  height: 155rpx;
+  width: 500rpx;
+  margin-top: 7rx;
+  background: #f8f8f8;
+}
+.list-pic{
+  height: 80rpx;
+  width: 80rpx;
+  float: left;
+  margin: 37rpx 0 0 28rpx;
+}
+.message-content{
+  margin-left: 25rpx;
+  width: 288rpx;
+  height: 100%;
+  float: left
+}
+.content-bt{
+  font-size: 28rpx;
+  color: #575b5a;
+  display: block;
+  margin: 53rpx 0 16rpx 0;
+}
+.content-data{
+  color: #c4c4c4;
+  font-size: 24rpx;
+  display: block
+}
+.xy-operation{
+  float: right;
+  font-size: 28rpx;
+  color: #919598;
+  line-height: 156rpx;
+  margin-right: 16rpx;
+}
+.move-state{
+  background: rgba(0,0,0,0);
+ transform: rotate(0deg) scale(1) translate(75%,0%);
+ -webkit-transform: rotate(0deg) scale(1) translate(75%,0%);
+}
+.homename{
+  float: left;
+  font-size: 28rpx;
+  color: #6e869a;
+  margin: 25rpx 0 0 0;
+  width:60%;
+  text-align:center;
+}
+.add-device,.message-empty{
+  float: right;
+  color: #7cd0ff;
+  font-size: 18rpx;
+  line-height: 80rpx;
+  margin-right: 17rpx;
+}
+.xy-device,.xy-message{
+  background:#fff;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:2;
+  /* width: 100%; */
+  height: 100%;
+}
+.iconOnline{
+  height: 20rpx;
+  width: 20rpx;
+  position: absolute;
+  top: 99rpx;
+  left: 76rpx;
+}
+.addHomecenter{
+  height:125rpx;
+  background: #FAFAFA;
+  padding-left: 28rpx;
+  /* width: 286px; */
+  width: 600rpx;
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+}
+.preson{
+  height: 55rpx;
+  margin-top: 35rpx;
+  width: 63rpx;
+  float: left;
+}
+.addDetail{
+  font-family: PingFangSC-Medium;
+  font-size: 24rpx;
+  color: #55585A;
+  line-height: 28rpx;
+  float:left;
+  margin: 36.7rpx 0 0 30rpx;
+  width: 70%;
+}
+.msgNext{
+  height: 26rpx;
+  width: 17rpx;
+  margin-top: 50rpx;
+}
+.navigator-right{
+  float: right;
+  height: 100%;
+  min-width: 90rpx
+}
+.boxselect{
+  height: 166.7rpx ;
+  width: 487rpx;
+  float: left
+}
+.addroster{
+  font-family: PingFangTC-Medium;
+  font-size: 32rpx;
+  color: #55585A;
+  margin-left: 30rpx;
+  line-height: 166.7rpx;
+}
+.nextpage{
+  height: 24rpx;
+  width: 16rpx;
+  margin-top: 67rpx;
+}
+.commonzhezhao{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+.dot{
+  height:16rpx;
+  width:16rpx;
+  border-radius:60rpx;
+  position:absolute;
+  top: 76rpx;
+  right: 78rpx;
+  background:red;
+}

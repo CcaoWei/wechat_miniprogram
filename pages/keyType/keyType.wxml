@@ -1,0 +1,104 @@
+<view class='continer'>
+  <view class='item-box'>
+    <view class="box-full" bindtap='bindDevice' data-binduuid='{{uibindDevice.uuid}}' data-types='1' data-doublebind='{{doublebind}}'>
+      <image class='alarm' src='{{uiPageDeviceImg.lightImg}}'></image>
+      <view class='inform'>
+        <text class='informBt'>无线开关</text>
+        <text class='informText' wx:if="{{doublebind == 'undefined'}}">轻轻一按，全部搞定</text>
+        <text class='informText' wx:if="{{doublebind != 'undefined'}}">快速双击，控制设备</text>
+      </view>
+    </view>
+    <view wx:if='{{uibindDevice}}' class='switch-btn-new switch-btn switchBtns {{uibindDevice.enabled ? " " : "switch-btnbg"}}'>
+      <view class='btn-dot' wx:if="{{uibindDevice.enabled == false}}">
+        <!-- 这个里面是点点 -->
+        <view class='allline' wx:if="{{uibindDevice.loading == true}}">
+
+          <view class='linebg {{uibindDevice.enabled ? "linebg2" : ""}}' wx:if="{{uibindDevice.loading == true}}">
+            <view class='line-all line1'></view>
+            <view class='line-all line2'></view>
+            <view class='line-all line3'></view>
+            <view class='line-all line4'></view>
+            <view class='line-all line5'></view>
+            <view class='line-all line6'></view>
+            <view class='line-all line7'></view>
+            <view class='line-all line8'></view>
+          </view>
+        </view>
+      </view>
+      <text class='btn-text' wx:if="{{uibindDevice.enabled == false}}">停用</text>
+      <text class='btn-text' wx:if="{{uibindDevice.enabled == true}}">启用</text>
+      <view class='btn-dot' wx:if="{{uibindDevice.enabled == true}}">
+        <!-- 这个里面是点点 -->
+        <view class='allline' wx:if="{{uibindDevice.loading == true}}">
+
+          <view class='linebg {{uibindDevice.enabled ? "linebg2" : ""}}' wx:if="{{uibindDevice.loading == true}}">
+            <view class='line-all line1'></view>
+            <view class='line-all line2'></view>
+            <view class='line-all line3'></view>
+            <view class='line-all line4'></view>
+            <view class='line-all line5'></view>
+            <view class='line-all line6'></view>
+            <view class='line-all line7'></view>
+            <view class='line-all line8'></view>
+          </view>
+        </view>
+      </view>
+      <view class='bind-view' data-types='1' data-binduuid="{{uibindDevice.uuid}}" data-switchenable='{{!uibindDevice.enabled}}' data-bindtype='device' bindtap='initiateMode'></view>
+    </view>
+
+
+    <view class='icon-nextBind' wx:if="{{!uibindDevice}}" bindtap='bindDevice' data-binduuid='{{uibindDevice.uuid}}' data-types='1' data-doublebind='{{doublebind}}'>
+      <image class='icon-next' src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </view>
+  <view class='item-box'>
+    <view bindtap='bindDevice' data-binduuid='{{uibindCurtain.uuid}}' data-types='1' data-doublebind='{{doublebind}}' data-curtain='curtain'>
+      <image class='alarm' src='{{uiPageDeviceImg.curtainImg}}'></image>
+      <view class='inform'>
+        <text class='informBt'>按键控窗</text>
+        <text class='informText' wx:if="{{doublebind == 'undefined'}}">窗帘开合，一键到位</text>
+        <text class='informText' wx:if="{{doublebind != 'undefined'}}">窗帘开合，双击到位</text>
+      </view>
+    </view>
+    <view wx:if='{{uibindCurtain}}' class='switch-btn-new switch-btn switchBtns {{uibindCurtain.enabled ? " " : "switch-btnbg"}}'>
+      <view class='btn-dot' wx:if="{{uibindCurtain.enabled == false}}">
+        <!-- 这个里面是点点 -->
+        <view class='allline' wx:if="{{uibindCurtain.loading == true}}">
+
+          <view class='linebg {{uibindCurtain.enabled ? "linebg2" : ""}}' wx:if="{{uibindCurtain.loading == true}}">
+            <view class='line-all line1'></view>
+            <view class='line-all line2'></view>
+            <view class='line-all line3'></view>
+            <view class='line-all line4'></view>
+            <view class='line-all line5'></view>
+            <view class='line-all line6'></view>
+            <view class='line-all line7'></view>
+            <view class='line-all line8'></view>
+          </view>
+        </view>
+      </view>
+      <text class='btn-text' wx:if="{{uibindCurtain.enabled == false}}">停用</text>
+      <text class='btn-text' wx:if="{{uibindCurtain.enabled == true}}">启用</text>
+      <view class='btn-dot' wx:if="{{uibindCurtain.enabled == true}}">
+        <!-- 这个里面是点点 -->
+        <view class='allline' wx:if="{{uibindCurtain.loading == true}}">
+
+          <view class='linebg {{uibindCurtain.enabled ? "linebg2" : ""}}' wx:if="{{uibindCurtain.loading == true}}">
+            <view class='line-all line1'></view>
+            <view class='line-all line2'></view>
+            <view class='line-all line3'></view>
+            <view class='line-all line4'></view>
+            <view class='line-all line5'></view>
+            <view class='line-all line6'></view>
+            <view class='line-all line7'></view>
+            <view class='line-all line8'></view>
+          </view>
+        </view>
+      </view>
+      <view class='bind-view' data-types='1' data-binduuid="{{uibindCurtain.uuid}}" data-switchenable='{{!uibindCurtain.enabled}}' data-bindtype='curtain' bindtap='initiateMode'></view>
+    </view>
+    <view class='icon-nextBind' wx:if="{{!uibindCurtain}}" bindtap='bindDevice' data-binduuid='{{uibindCurtain.uuid}}' data-types='1' data-doublebind='{{doublebind}}' data-curtain='curtain'>
+      <image class='icon-next' src='../../imgs/icon_nexts.png'></image>
+    </view>
+  </view>
+</view>

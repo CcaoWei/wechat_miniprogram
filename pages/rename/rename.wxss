@@ -1,0 +1,52 @@
+/* pages/rename/rename.wxss */
+.rename{
+  width: 95%;
+  height: 120rpx;
+  display: block;
+  margin: 0 auto;
+   opacity: 0.5;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  line-height: 120rpx;
+}
+.saveBtn{
+  height: 86rpx;
+}
+.save-box{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  z-index: 33;
+  width: 20%;
+}
+.save{
+  height: 41rpx;
+  width: 42rpx;
+  display:block;
+  float:right;
+  margin: 45.5rpx 30rpx 0 0;
+}
+.compileName{
+  position: fixed;
+  top: 102rpx;
+  height: 90rpx;
+  border-bottom: 2rpx solid #eee;
+  width: 95%;
+  margin: 0 auto;
+  z-index: 2;
+  left: 50%;
+  background: #fff;
+  margin-left: -47.5%;
+}
+.rename{
+  line-height: 90rpx;
+  height: 90rpx;
+}
+.sceneNameicon{
+  height: 27.59rpx;
+  width: 32rpx;
+  position: absolute;
+  right: 12rpx;
+  top: 32rpx;
+}

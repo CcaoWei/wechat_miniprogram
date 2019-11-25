@@ -1,0 +1,81 @@
+<import src="../../utils/showToast/showToast.wxml" />
+<view class='conniter'>
+  <template is="showToast" data="{{showToast: showToast}}" />
+  <view class="touch" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd"></view>
+  <view class='box-detail'>
+    <image src='../../imgs/home_center.png' class='home_center'></image>
+    <text class='xy-text'>小燕家庭中心</text>
+  </view>
+  <view wx:if="{{boxDetail != ''}}" class='detail-content'>
+    <navigator url='../amend/amend?uuid={{boxDetail.uuid}}&nickname={{boxDetail.name}}' hover-class='none'>
+      <view class='xy-devicename'>
+        <text class='dn-name'>设备名称</text>
+        <image src='../../imgs/icon_next.png' class='icon-next'></image>
+        <text class='dn-rel'>{{boxDetail.name}}</text>
+      </view>
+    </navigator>
+    <view class='xy-devicename'>
+      <text class='dn-name'>设备型号</text>
+      <text class='dn-rel'>TERNCY-GW01</text>
+    </view>
+    <navigator url='../sysInformation/sysInformation?uuid={{boxDetail.uuid}}&&types=count' hover-class='none'>
+      <view class='xy-devicename'>
+        <text class='dn-name'>主人账号</text>
+        <image src='../../imgs/icon_nexts.png' class='icon-next'></image>
+        <text class='dn-rel'>{{boxDetail.roster.length}}</text>
+      </view>
+    </navigator>
+    <navigator url='../roomControl/roomControl?uuid={{boxDetail.uuid}}' hover-class='none'>
+      <view class='xy-devicename'>
+        <text class='dn-name'>房间管理</text>
+        <image src='../../imgs/icon_nexts.png' class='icon-next'></image>
+      </view>
+    </navigator>
+    <!-- 这个处理如果有固件升级就显示带navigator 否则显示不带navigator -->
+    <view wx:if='{{EntityFirmware && EntityFirmware.length != 0}}'>
+      <navigator url='../firmwareUpdate/firmwareUpdate?boxuuid={{boxDetail.uuid}}' hover-class='none'>
+        <view class='xy-devicename'>
+          <text class='dn-name'>固件升级</text>
+          <view class='reddots'>
+            <view class='reddot'></view>
+          </view>
+        </view>
+      </navigator>
+
+    </view>
+    <view wx:if='{{EntityFirmware == false || EntityFirmware.length == 0}}'>
+      <view class='xy-devicename' bindtap='testToast'>
+        <text class='dn-name'>固件升级</text>
+      </view>
+    </view>
+    <view class='xy-devicename' bindtap='checkUpdata'>
+      <text class='dn-name'>检测新版本</text>
+    </view>
+    <navigator url='../sysInformation/sysInformation?uuid={{boxDetail.uuid}}&&types=updata' hover-class='none'>
+      <view class='xy-devicename'>
+        <text class='dn-name'>固件升级版本选择</text>
+        <image src='../../imgs/icon_nexts.png' class='icon-next'></image>
+      </view>
+    </navigator>
+    <view class='xy-devicename'>
+      <button class='shareBtn'  open-type="share">
+        <text class='dn-name '>分享家庭中心</text>
+      </button>
+    </view >
+    <navigator url='../sysInformation/sysInformation?uuid={{boxDetail.uuid}}' hover-class='none'>
+      <view class='xy-devicename'>
+        <text class='dn-name'>系统信息</text>
+        <image src='../../imgs/icon_nexts.png' class='icon-next'></image>
+      </view>
+    </navigator>
+    <button bindtap='delectRoster' data-boxuuid='{{boxDetail.uuid}}' class='xy-delete'>删除</button>
+
+
+  </view>
+  <view wx:if="{{(boxDetail == '' || boxDetail == 'undefined') && newhomecenter == '取消添加'}}" class='showwait'>
+    已请求使用设备，等待其他用户授权中...
+  </view>
+  <view wx:if="{{boxDetail == '' || boxDetail == 'undefined'}}" bindtap='{{newhomecenter == "添加" ? "adding" : "cancelAdding"}}' class='wait'>
+    {{newhomecenter}}
+  </view>
+</view>

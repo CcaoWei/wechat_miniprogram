@@ -1,0 +1,103 @@
+/* pages/detailInput/detailInput.wxss */
+.moreIn{
+  height: 120rpx;
+  width: 95%;
+  margin: 0 auto;
+  line-height: 120rpx;
+  border-bottom: 2rpx solid #ccc;
+  overflow-x: hidden;
+}
+.moreBt{
+  float: left;
+  margin: 0 18rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #969da2;
+}
+.moreText{
+  float: right;
+   margin: 0 18rpx;
+   font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #2D3B46;
+}
+.settings{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #9b9b9b;
+  width: 95%;
+  display: block;
+  height: 104rpx;
+  margin: 0 auto;
+  line-height: 124rpx;
+}
+.room-device{
+  margin: 10rpx auto 0;
+}
+.detailUrl{
+  width: 80%;
+  /* width: 77%; */
+  height: 160rpx;
+  float: left;
+}
+.binding{
+  width: 95%;
+  margin: 0 auto;
+}
+.room-pic{
+  height: 85rpx;
+  width: 85rpx;
+  display: block;
+  float: left;
+  margin-left: 28rpx;
+  margin-top: 37rpx;
+
+}
+.roomDevice-name{
+  float: left;
+  margin-left: 37rpx;
+  height: 160rpx;
+  /* overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap; */
+  width: 395rpx;
+  display: flex;
+  /* flex-direction: row;
+  justify-content: start;
+  align-items: center; */
+  flex-wrap: wrap;
+  align-content: center;
+}
+.ledbt{
+  width: 395rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #55585A;
+  line-height: 33rpx;
+  height: 33rpx;
+}
+.ledtext{
+  width: 395rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  opacity: 0.7;
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #899198;
+  line-height: 25rpx;
+  height: 25rpx;
+  margin-top: 14rpx;
+}
+.switch-btn-new{
+  margin-left:0
+}
+.linebg{
+  left: 8rpx;
+}
+.linebg2{
+  left: -8rpx;
+}
